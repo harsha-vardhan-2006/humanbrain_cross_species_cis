@@ -544,3 +544,32 @@ Status:      Gate DOWNGRADED from "full text blocked" to "abstract-complete,
              submission from any unblocked network/device; failure modes
              already bounded by the abstract.
 ```
+
+## SESSION CLOSE — release + authorship pass (2026-09-26)
+
+```
+Context:     User requested completion of all outstanding items, packaging,
+             and publication to git under full author name.
+Done:
+  (1) Documentation-integrity pass (see CORRECTIONS above; no statistic
+      changed): fill_report.py unit fix; RESOLUTION.md + NULL_MODEL_REPORT.md
+      corrected with flagged notes; manuscript §5 completed + §6 extended.
+  (2) E17a literature-gate progress (see entry above).
+  (3) RELEASE_NOTES.md written; release archive
+      dist/cross_species_cis_v1.0.0.zip built (6,686 files; cache_parts/,
+      quarantined/, __pycache__/ excluded; CRC-verified OK);
+      SHA256 fe686e2b6bdbb29642491274c8189318b167d94d65fa6b3b6d9e654c0507c161
+      recorded in dist/SHA256SUMS_cross_species_cis.txt.
+  (4) Git layer initialized (whitelist .gitignore: study tree + 00_Metadata +
+      99_Logs + release checksum; all heavy binary data excluded); committed
+      as the v1.0.0 release commit (76d8fd7) and pushed to
+      github.com/harsha-vardhan-2006/humanbrain_cross_species_cis (main).
+  (5) Authorship: all commits in this repo and in fruitfly_paper rewritten to
+      "Harsha Vardhan Malipeddi" (fruitfly history rewritten incl. tag v1.0.0,
+      force-pushed; old fly SHAs 79d04ef/fdfafe5 cited in historical logs are
+      now e12f4ee/e7f9d96 — historical entries preserved as written).
+Verdict:     Study COMPLETE and published as v1.0.0. Remaining before
+             submission: one manual full-text read of Kudriavtsev 2026 from an
+             unblocked network; venue choice + cover letter; optional Zenodo
+             DOI for the release archive.
+```
