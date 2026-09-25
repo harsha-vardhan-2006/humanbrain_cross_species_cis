@@ -1,0 +1,18 @@
+# Whitelist approach: the git layer tracks the cross-species CIS study,
+# acquisition metadata/logs, and the release checksum. All heavy binary
+# data (volumes, connectome zips, caches, quarantines) stays out of git.
+
+/*
+!/.gitignore
+!/README_ACQUISITION.md
+!/00_Metadata/
+!/99_Logs/
+!/13_CROSS_SPECIES_CIS/
+!/dist/SHA256SUMS_cross_species_cis.txt
+
+# Regenerable / heavy data inside the tracked tree
+13_CROSS_SPECIES_CIS/02_PREPROCESSING/cache_parts/
+13_CROSS_SPECIES_CIS/02_PREPROCESSING/quarantined/
+__pycache__/
+*.pyc
+*.tmp
