@@ -573,3 +573,47 @@ Verdict:     Study COMPLETE and published as v1.0.0. Remaining before
              unblocked network; venue choice + cover letter; optional Zenodo
              DOI for the release archive.
 ```
+
+## FINALIZATION SESSION — full audit, freeze, submission package (2026-09-26, late)
+
+```
+Executed (parts of the finalization prompt; all verifications ACTUALLY RUN):
+  - Independent numeric audit: 10_REPORT/verify_final_numbers.py (stdlib-only)
+    recomputed every documented headline number from frozen artifacts:
+    42/42 PASS. Appendix: FINAL_REPRODUCIBILITY_AUDIT.md. No discrepancy
+    found; no correction needed.
+  - Part 1 literature gate: Kudriavtsev 2026 full text STILL inaccessible
+    (bioRxiv HTML + PDF 403; 4th documented attempt; no PMC/OSF mirror).
+    Complete author abstract + metadata verified via third-party mirror.
+    Verdict: PARTIAL OVERLAP, novelty wording RETAINED, full-text read
+    remains a human pre-submission gate. Record:
+    10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md (to be co-signed).
+  - Part 4: ANALYSIS_FREEZE.md created (post-audit precondition met).
+  - Part 5: HYPOTHESIS_RESULT_MATRIX.md created (H1/H2/H4 supported,
+    H3 not supported — negatives preserved).
+  - Part 6: 10_LITERATURE/NOVELTY_MATRIX.md created (bounded wording).
+  - Part 7: 10_REPORT/MANUSCRIPT_FINAL.md created (submission structure;
+    conclusions/values identical to frozen v1.0).
+  - Part 8: 10_REPORT/FIGURE_PROVENANCE.md created (existing figures mapped;
+    Figure 5 anatomical render documented as a typesetting-time task from
+    frozen artifacts; no new statistics).
+  - Part 9: 10_REPORT/SUPPLEMENTARY_MATERIAL.md created (S1-S14).
+  - Part 11: release audit WITHOUT rebuild: SHA256 match, CRC OK, 6,686
+    files, all key documents present inside the archive.
+  - Part 10: fruitfly RESEARCH_LOG append-only PROVENANCE NOTE added
+    (history rewrite solely for author identity; old->new SHA map).
+  - Part 14: SUBMISSION_PACKAGE/ assembled (11 files + README; placeholders
+    marked, nothing fabricated).
+  - Part 15: SUBMISSION_PACKAGE/JOURNAL_OPTIONS.md (scope/policy facts;
+    no ranking).
+  - Part 13: 10_REPORT/FINAL_RESEARCH_STATUS.md created.
+  - Part 18: 10_REPORT/FINAL_GATE_REPORT.md created (A-H PASS; I READY-WITH-
+    CONDITIONS).
+NOT executed (documented, with reasons):
+  - manuscript.pdf/.docx rendering: pandoc/LaTeX not installed on this
+    machine; exact commands provided in SUBMISSION_PACKAGE/README.md.
+  - Figure 5 anatomical distribution render: requires the 456-node label
+    geometry at typesetting; statistics already frozen in table_07.
+Verdict:  Analysis FROZEN; audit PASSED; repository and release verified;
+  publication-ready at package level with named human actions outstanding.
+```
