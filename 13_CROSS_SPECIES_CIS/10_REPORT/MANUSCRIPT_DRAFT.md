@@ -165,7 +165,7 @@ primary configuration [artifact: `06_ROBUSTNESS/`, table_08].
    degree-preserving null ensemble while a different, degree-matched signal
    survives. The human cohort reproduces exactly this two-layer outcome
    under the pre-registered matrix: concentration beyond the null is
-   universal (200/200 subjects, median z = 16.36), the degree-matched
+   present in every tested subject (200/200, median z = 16.36), the degree-matched
    residual is small but near-universal (778/801 subjects, Cliff's
    δ = 0.100 vs the fly's 0.0979), and the residual's system mapping is
    weak (R2b NEGATIVE). Control-impact architecture — not its anatomical

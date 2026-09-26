@@ -1,5 +1,52 @@
 # HumanBrain Acquisition Workspace
 
+## Scientific project overview — Cross-Species CIS study
+
+This workspace hosts the **cross-species control-impact study**
+(`13_CROSS_SPECIES_CIS/`; full detail, artifacts, and manuscript in that tree).
+
+**WHAT WE STUDIED.** Node-removal network impact (Control Impact Score, CIS =
+(E(G) − E(G−i))/E(G)) in population-scale human structural connectomes
+(AOMIC-ID1000, Zenodo 19796783: 900 subjects acquired, 801 QC-pass, 456-node
+atlas) and in the Drosophila connectome (FAFB/FlyWire v783, 139,255 neurons,
+frozen prior release).
+
+**WHAT WE FOUND.** Structural network impact contains a dominant
+connectivity-dependent component (CIS–degree ρ ≈ 0.94; top-50 concentration
+exceeds degree-preserving null expectations in 200/200 tested subjects) plus a
+smaller degree-independent residual, detectable in 778/801 subjects
+(Cliff's δ ≈ 0.100; 43/456 nodes survive FDR).
+
+**CROSS-SPECIES RESULT.** "Architecture replicates; anatomy does not." A
+broadly similar two-component decomposition appears at both scales (human δ ≈
+0.100; fly δ ≈ 0.0979, itself not null-surviving), while the residual's
+anatomical identity diverges (human visual share 2% vs fly 80%
+visual-centrifugal; the pre-registered human system-enrichment gate was
+negative).
+
+**WHAT IT DOES NOT SHOW.** No anatomical homology, no conserved biological
+mechanism, no universal law, and no causal mechanism is established. The
+result is a cross-scale architectural observation and a hypothesis-generating
+finding.
+
+**WHAT IS POTENTIALLY NOVEL.** The integrated analytical framework — per-node
+removal CIS + population-scale per-subject computation + explicit
+degree/strength-controlled residualization + degree-preserving null-model
+arbitration + FDR-controlled residual inference + robustness/rank-stability
+analysis + a pre-specified cross-species comparison with Drosophila — and the
+resulting cross-scale empirical comparison. The individual components are all
+established methods (see `13_CROSS_SPECIES_CIS/10_REPORT/NOVELTY_AUDIT.md`,
+`13_CROSS_SPECIES_CIS/CLAIM_EVIDENCE_MATRIX.md`).
+
+Key study results: `13_CROSS_SPECIES_CIS/10_REPORT/RESOLUTION.md` (gate
+resolutions), `13_CROSS_SPECIES_CIS/10_REPORT/FINAL_RESEARCH_STATUS.md`
+(summary). Negative findings — including the fly study's rejected
+GABA/inhibitory hypothesis — are preserved and documented.
+
+---
+
+## Workspace safety policy
+
 Safety policy (binding for all tooling in this workspace):
 - G: is strictly READ-ONLY. Nothing may be written, moved, or deleted there.
   (Verified: G:\fruitfly untouched at 261 files / 17,521,318,473 bytes throughout.)

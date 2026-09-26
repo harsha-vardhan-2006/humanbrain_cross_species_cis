@@ -1,5 +1,10 @@
 # Novelty Audit — Cross-Species Control-Impact Study
 
+*(Spec-alias note 2026-09-26: the external audit spec names this file at
+`13_CROSS_SPECIES_CIS/NOVELTY_AUDIT.md`; this report was placed in
+`10_REPORT/` — the existing report layer — and a pointer file exists at the
+spec path. Content is identical; do not duplicate maintenance.)*
+
 **Date:** 2026-09-26 (post-freeze framing audit; no analysis rerun, no numeric change)
 **Basis:** project literature verification (E00, E00a, E17, E17a) + updated
 2026-09-26 web sweep (documented in `10_LITERATURE/NOVELTY_MATRIX.md`

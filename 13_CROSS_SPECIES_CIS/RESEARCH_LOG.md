@@ -726,3 +726,65 @@ COMMIT SHA: recorded in the git commit following this entry (see `git log
 Verdict:   Framing now matches the frozen evidence; novelty bounded and
   documented; negative results preserved; 44/44 numeric audit PASS.
 ```
+
+## E20 — COMPLETION PASS (2026-09-26; documentation only, follow-up audit)
+
+```
+Date:        2026-09-26
+Trigger:     Follow-up external audit of the E19 update. Inspect the CURRENT
+             repository, identify anything still missing, fix, verify, push.
+             NO analysis rerun; NO numeric change; raw data untouched.
+State found: Working tree clean at fb92d66 (E19 commit, pushed); branch main;
+             remote github.com/harsha-vardhan-2006/humanbrain_cross_species_cis.
+Gaps identified and fixed:
+  (1) Spec-path alias: the audit spec names NOVELTY_AUDIT.md at the study
+      root. The full report (E19) lives in 10_REPORT/; added a pointer file
+      13_CROSS_SPECIES_CIS/NOVELTY_AUDIT.md (no duplicated content; the
+      root study README already links both).
+  (2) Root workspace README (humanbrain/README.md) was acquisition-only.
+      Added a concise scientific project overview (WHAT WE STUDIED /
+      FOUND / CROSS-SPECIES RESULT / DOES NOT SHOW / POTENTIALLY NOVEL;
+      "Architecture replicates; anatomy does not.") at the top. ALL
+      acquisition, safety-policy, checksum, license, and layout content
+      preserved verbatim below it.
+  (3) Residual overclaim: MANUSCRIPT_DRAFT §5.1 phrase "concentration
+      beyond the null is universal (200/200 ...)" — "universal" retained
+      from the pre-E19 draft. Softened to "present in every tested
+      subject (200/200)" (factually identical, no overstatement).
+  (4) NOVELTY_AUDIT.md header: added spec-alias note explaining the
+      10_REPORT/ location and the pointer file.
+Verification executed:
+  - Repository-wide overclaim sweep (git grep): "first ever/first-ever/
+    first in the world/never before/unprecedented/breakthrough/fundamental
+    law" -> only negation/guardrail contexts remain (E19 audit section and
+    NOT-claimed lists). "proves/proof" -> none outside negations and
+    provenance words. "discovered" -> none. "anatomical homology" -> only
+    negations/constraints (no-homology rules). "universal" -> only
+    "near-universal" results wording, negations, and correction notes.
+  - Numerical consistency: verify_final_numbers.py 44/44 PASS; cross-doc
+    occurrence counts for 778/801, 200/200, 43/456, 0.100, 0.0979,
+    139,255, rho 0.943, z 16.36 spot-checked (18-20 files each, all
+    consistent with frozen artifacts); fly 13/50 and 80% fraction
+    re-verified directly against ../fruitfly/results/tables/
+    e14_v2_summary.json.
+  - git diff --check: clean (no whitespace errors).
+Intentionally NOT changed:
+  - All headline statistics; raw datasets; caches; null artifacts.
+  - Negative findings (fly GABA rejection p=0.109; human R2b NEGATIVE;
+    Wilcoxon median p 0.167; 1/101 p-floor) — preserved verbatim.
+  - Historical log entries (append-only discipline maintained).
+  - Existing tags and release archive v1.0.0.
+Files changed in E20: README.md (root; scientific overview added),
+  13_CROSS_SPECIES_CIS/NOVELTY_AUDIT.md (NEW pointer),
+  13_CROSS_SPECIES_CIS/10_REPORT/NOVELTY_AUDIT.md (alias note),
+  13_CROSS_SPECIES_CIS/10_REPORT/MANUSCRIPT_DRAFT.md (one phrase),
+  13_CROSS_SPECIES_CIS/RESEARCH_LOG.md (this entry).
+Remaining uncertainty (unchanged): Kudriavtsev 2026 full text still unread
+  (4 documented attempts; abstract-complete verification on file);
+  literature coverage of 2025-2026 preprints incomplete by nature.
+Final novelty interpretation: unchanged from E19 — the integration of
+  established components and the resulting cross-scale empirical
+  comparison; negative findings preserved; hypothesis-generating only.
+Verdict:   Repository converges on the required scientific position;
+  publication-ready framing; 44/44 numeric audit PASS.
+```
