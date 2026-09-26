@@ -33,6 +33,7 @@ Future manuscript edits should only use the "Allowed wording" column.
 | 23 | Robustness of the human architecture | 9 configs within 0.0026 of primary top-50 mean; rank stability 0.996 | `table_08_robustness.csv`; RESOLUTION.md E06 | Supported by current data | "all 9 configurations within 0.0026; rank stability 0.996" |
 | 24 | Per-subject empirical p-values (battery B) resolve the tail | All at 1/101 floor | RESOLUTION.md; MANUSCRIPT_DRAFT §6 | Not supported (as stated) | "per-subject inference rests on z and the population sign test" |
 | 25 | Dataset is "SIFT2" | Weight is `sift_radius2_count_connectivity` (SIFT-filtered counts); "SIFT2" is a different algorithm | `02_PREPROCESSING/cache_io.py`; Zenodo record | **Should not be claimed** | "SIFT-filtered streamline counts" |
+| 26 | Limitations register is complete and preserved | Undirected graphs (directed variant impossible); single pipeline/acquisition; residual near CIS noise floor; battery-B p at the 1/101 floor; subcortical residual K-ladder-fragile; ENVIRONMENT_MANIFEST provenance gap; Kudriavtsev 2026 full text verified via proxy only (direct access blocked) | MANUSCRIPT_FINAL §4.10; FINAL_RESEARCH_STATUS §8 | Established (as disclosed limitations) | state each limitation as documented; do not omit any |
 
 ## Interpretation guardrails (binding, from HYPOTHESIS_RESULT_MATRIX.md)
 
