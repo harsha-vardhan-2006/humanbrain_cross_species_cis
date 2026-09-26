@@ -46,10 +46,16 @@ interesting but partly fortuitous (different units/graphs/designs).
 ## 7. Novelty
 Bounded and verified: **"To our knowledge, no prior study has combined these
 analyses in a per-subject population-scale human structural-connectome
-framework with a pre-registered cross-scale comparison."** Closest neighbor
-(Kudriavtsev 2026): PARTIAL OVERLAP — matched-mass (not degree-preserving)
-nulls, ageing framing. Full text pending one manual read (documented ×4
-attempts). Matrix: `10_LITERATURE/NOVELTY_MATRIX.md`.
+framework with a pre-registered cross-scale comparison."** The novelty lies
+primarily in the integration of established analyses and the resulting
+cross-scale empirical comparison, not in any individual component
+(full audit: `10_REPORT/NOVELTY_AUDIT.md`; claim-by-claim:
+`CLAIM_EVIDENCE_MATRIX.md`). Closest neighbor (Kudriavtsev 2026): PARTIAL
+OVERLAP — matched-mass (not degree-preserving) nulls, ageing framing. Full
+text pending one manual read (documented ×4 attempts). Matrix:
+`10_LITERATURE/NOVELTY_MATRIX.md` (2026-09-26 sweep appended: Yadav 2025,
+Venkadesh 2025, Niyazmand 2026 recorded as adjacent; none occupies the
+combination).
 
 ## 8. Limitations
 Undirected graphs (directed variant impossible in these derivatives); single
@@ -60,9 +66,12 @@ unread; ENVIRONMENT_MANIFEST provenance gap disclosed.
 
 ## 9. Reproducibility status
 **PASS.** Independent stdlib-only audit recomputed every documented number
-from frozen artifacts: 42/42 (`10_REPORT/verify_final_numbers.py`,
-`FINAL_REPRODUCIBILITY_AUDIT.md`). Implementations cross-validated (4e-16 /
-6.1e-16). No unexplained discrepancy exists anywhere in the tree.
+from frozen artifacts: 42/42 at freeze; extended to 44/44 on 2026-09-26
+(added max-population-mean-CIS checks; manuscript rounding corrected
+0.00463 → 0.00462 to match `e03_summary.json` = 0.0046246)
+(`10_REPORT/verify_final_numbers.py`, `FINAL_REPRODUCIBILITY_AUDIT.md`).
+Implementations cross-validated (4e-16 / 6.1e-16). No unexplained
+discrepancy exists anywhere in the tree.
 
 ## 10. Repository status
 `github.com/harsha-vardhan-2006/humanbrain_cross_species_cis` — main, all

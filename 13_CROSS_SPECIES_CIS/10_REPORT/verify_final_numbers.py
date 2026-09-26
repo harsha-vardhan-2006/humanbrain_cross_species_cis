@@ -110,6 +110,12 @@ nwl = jget(dsc, "subjects_wilcoxon_p_lt_05")
 if nwl is not None:
     check("Subjects with Wilcoxon p<.05", 125, int(nwl))
 
+# ------------------------------------------------------- E03 CIS summary
+e03 = load_json(os.path.join(BASE, "04_CIS", "e03_summary.json"))
+check("Max population-mean CIS (node 414)", 0.00462, round(e03["cis_mean_pop_max"], 5), tol=5e-6,
+      note="manuscript rounding corrected 0.00463 -> 0.00462 on 2026-09-26")
+check("Max-CIS node", 414, e03["cis_max_mean_node"])
+
 # ------------------------------------------------------- E05 statistics
 e05 = load_json(os.path.join(BASE, "04_CIS", "e05_statistics.json"))
 pn = e05["per_node_null"]

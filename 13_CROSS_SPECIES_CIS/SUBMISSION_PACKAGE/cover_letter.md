@@ -3,8 +3,8 @@
 Dear Editors,
 
 We submit our manuscript, "Control-impact architecture of the human
-structural connectome: degree dominance, a small universal residual, and a
-cross-scale architectural comparison with the fly connectome," for
+structural connectome: degree dominance, a small near-universal residual,
+and a cross-scale architectural comparison with the fly connectome," for
 consideration as a research article.
 
 **What we did.** Using the population-scale AOMIC-ID1000 structural-connectome

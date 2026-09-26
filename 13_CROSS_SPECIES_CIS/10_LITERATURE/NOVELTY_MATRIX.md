@@ -40,6 +40,52 @@ text still unread, residual risk documented).
 > per-subject population-scale human structural-connectome framework with a
 > pre-registered cross-scale comparison.
 
+## 2026-09-26 updated sweep (post-freeze framing audit; append-only)
+
+A fresh web sweep (Google-index queries: node-removal/GE + degree-preserving
+nulls + population; Drosophila control-impact/chokepoint; cross-species
+connectome architecture 2024–2026; NCT 2025–2026) found **no occupation of
+the combination**. Three previously unrecorded adjacent works were found and
+are recorded honestly:
+
+1. **Yadav, Shinde & Singh 2025**, *Brain rewiring during development: A
+   comparative analysis of larval and adult Drosophila melanogaster
+   connectomes*, Network Neuroscience 9(4):1299–1322,
+   doi:10.1162/netn.a.26 — uses degree-preserving random networks AND
+   targeted attack in Drosophila connectomes (larval vs adult, n=1 per
+   stage). **Overlap:** the fly-side tool pair (degree-preserving nulls +
+   node removal). **Distinction:** no per-subject population framework, no
+   degree-matched residual decomposition, no human cohort, no pre-registered
+   cross-scale arbitration. This row WEAKENS any hypothetical claim that
+   "degree-preserving nulls + node removal in a fly connectome" is
+   unoccupied; the study's actual claim (the seven-element human
+   population-scale combination, NOVELTY_AUDIT §2) is unaffected.
+2. **Venkadesh et al. 2025**, *Directed connectomes across species reveal
+   conserved and divergent pathways of neural signaling*, bioRxiv
+   10.1101/2025.09.07.674762 (PMC12439989) — directed connectomes across
+   mouse/marmoset/macaque/human via tracer polarity + dMRI; path-efficiency
+   influence metrics. **Overlap:** cross-species structural comparison
+   goal. **Distinction:** no node-removal CIS, no null-arbitrated residual
+   decomposition, no fly–human pairing, no pre-registration of the present
+   comparison. Confirms cross-species connectomics is an active field
+   (supports the "not new" boundary, not a threat to the combination).
+3. **Niyazmand et al. 2026** (Network Neuroscience / direct.ms —
+   controllability-measure relationships across subjects) — confirms
+   average-controllability/connectivity coupling; adjacent NCT metric
+   family, no node removal. No threat.
+
+Also re-verified: the Yueh-Hsin et al. 2024 record resolves to Lin,
+Yueh-Hsin et al., "Discernible interindividual patterns of global efficiency
+decline during theoretical brain surgery", Sci Rep 14:14573,
+doi:10.1038/s41598-024-64845-4 (PMC11196730) — consistent with the E17
+assessment (per-subject resection GE decline; no matching/nulls/residual
+ranking).
+
+**Updated verdict:** the bounded novelty wording is RETAINED. The matrix
+rows above are extended by the three works; none occupies the seven-element
+combination (see `10_REPORT/NOVELTY_AUDIT.md` §6). Kudriavtsev full-text
+read remains the pre-submission condition.
+
 ## Pre-submission conditions
 1. Human full-text read of Kudriavtsev 2026 (gate record co-signed).
 2. If any future full-text read reveals per-subject population CIS-residual

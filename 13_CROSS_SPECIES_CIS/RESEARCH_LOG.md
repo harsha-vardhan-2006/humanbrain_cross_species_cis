@@ -617,3 +617,112 @@ NOT executed (documented, with reasons):
 Verdict:  Analysis FROZEN; audit PASSED; repository and release verified;
   publication-ready at package level with named human actions outstanding.
 ```
+
+## E19 — NOVELTY-FRAMING AUDIT (2026-09-26, post-freeze; documentation only)
+
+```
+Date:        2026-09-26
+Trigger:     External scientific-framing/novelty/literature-positioning audit
+             request. Scope: documentation, framing, literature positioning,
+             README, reproducibility. NO analysis rerun; NO numeric result
+             changed except one rounding slip (below); raw data untouched.
+Audit performed (before any edit):
+  - Full read of README, STUDY_DESIGN, RESEARCH_LOG, PROTOCOL_FREEZE,
+    ANALYSIS_FREEZE, RESOLUTION, FINAL_RESULT_DECISION, FINAL_AUDIT,
+    FINAL_GATE_REPORT, FINAL_RESEARCH_STATUS, MANUSCRIPT_DRAFT v1.0,
+    MANUSCRIPT_FINAL v2.0, SUBMISSION_PACKAGE (12 files), FIGURE_PROVENANCE,
+    SUPPLEMENTARY_MATERIAL, NOVELTY_MATRIX, KUDRIAVTSEV review,
+    CROSS_SCALE_ANALYSIS, HYPOTHESIS_RESULT_MATRIX, RELEASE_NOTES.
+  - Fly-side numbers re-verified against frozen artifacts:
+    e10b_final.json (delta 0.09788, p 0.1089, z 1.205),
+    e12_strong_results.json (K50 obs 21, 2.630x, z_B 5.2995),
+    e14_v2_summary.json (13 emp_p<0.01, visual_system_fraction_top50 0.80),
+    fruitfly README (139,255 neurons). ALL CONSISTENT with human-tree usage.
+  - verify_final_numbers.py baseline: 42/42 PASS (pre-edit).
+  - Cross-document numeric consistency: 801/900, 456, rho 0.943, 200/200,
+    z 16.36, p 1.24e-60, 778/801, delta 0.100, 43/456, z 23.3008, 2% Vis,
+    z_B 2.08/p .031/1.25x/K25 0.81, rank stability 0.996, E06 0.0026 —
+    consistent across all living documents.
+INCONSISTENCIES FOUND (all flagged inline where fixed):
+  (1) "10^5-fold node-count difference" (3 manuscripts) — arithmetic error:
+      139,255 neurons vs 456 parcels is ~3x10^2-fold (analysis graph
+      138,584/456 ~ 304). FIXED to "roughly 10^3-fold" with the explicit
+      counts. No statistic affected.
+  (2) Max population-mean CIS "0.00463" in MANUSCRIPT_FINAL/SUBMISSION
+      manuscript vs frozen artifact 0.004624584563433848 — rounding slip;
+      correct 3-s.f. value is 0.00462 (RESEARCH_LOG E03 entry was already
+      right). FIXED to 0.00462 with artifact note; verify_final_numbers.py
+      EXTENDED with 2 new checks (cis_mean_pop_max, max node) -> 44/44 PASS.
+  (3) "SIFT2 streamlines" (MANUSCRIPT_DRAFT, REPORT_SCAFFOLD,
+      FINAL_RESULT_DECISION) vs actual weight sift_radius2_count_
+      connectivity (SIFT-filtered counts; SIFT2 is a different algorithm).
+      FIXED in the living manuscript; older freeze-era docs left as-is
+      (append-only) — FINAL_REPRODUCIBILITY_AUDIT already used the correct
+      "SIFT2-consistent counts" phrasing; interpretation unchanged.
+  (4) Title wording "a small universal residual" vs data: residual > 0 in
+      778/801 (97.1%) — "universal" overstates. FIXED to "near-universal"
+      in titles (MANUSCRIPT_FINAL, SUBMISSION manuscript, cover letter) and
+      MANUSCRIPT_DRAFT title; flagged inline, append-only preserved.
+  (5) "the mechanism selecting residual chokepoints is not conserved" —
+      stated as fact; R2b-negative + anatomical divergence do not establish
+      non-conservation. SOFTENED to "the present data do not establish that
+      the mechanism ... is conserved (nor that it is not)" in both
+      manuscripts.
+  (6) "scale-invariance framing ... stated as a law" — future-work wording
+
+      bounded to "cross-scale generality ... before any generalization
+      beyond two species is drawn".
+NOVELTY POSITION (corrected/confirmed):
+  - Explicitly NOT claimed: node-removal CIS invented here (Alstott 2009,
+    Crossley 2014, Lin 2024); degree-preserving nulls new (Maslov-Sneppen);
+    hubs new (rich-club literature); NCT new (Gu 2015, Betzel 2016);
+    cross-species connectomics new (Venkadesh 2025 and earlier); "first
+    ever"/"first in the world"; new biological mechanism; universal law.
+  - Defensible claim ("to our knowledge", bounded to the combination):
+    per-node removal CIS + population-scale individual human connectomes +
+    degree-controlled residualization + degree-preserving null arbitration
+    + FDR-controlled residual inference + robustness/rank-stability +
+    pre-specified fly comparison, in one framework. The novelty lies in the
+    integration and the resulting cross-scale empirical comparison.
+NEW FILES:
+  - 10_REPORT/NOVELTY_AUDIT.md (10 sections: established components,
+    integration, human/fly/cross-scale findings, literature overlap,
+    defensible claim, non-supported claims, remaining uncertainty,
+    recommended wording).
+  - CLAIM_EVIDENCE_MATRIX.md (25 claims: evidence, source, strength class,
+    allowed wording).
+LITERATURE UPDATE (append-only, in NOVELTY_MATRIX.md):
+  - 2026-09-26 web sweep recorded 3 new adjacent works: Yadav, Shinde &
+    Singh 2025 (Network Neuroscience 9:1299, doi:10.1162/netn.a.26 —
+    degree-preserving nulls + targeted attack in larval/adult fly
+    connectomes; weakens only a claim we never made), Venkadesh et al.
+    2025 (bioRxiv 10.1101/2025.09.07.674762 — directed cross-species
+    connectomes), Niyazmand et al. 2026 (controllability relationships).
+    None occupies the combination; verdict wording RETAINED.
+  - Kudriavtsev 2026 full text remains unread (pre-existing gate,
+    unchanged).
+NOT CHANGED (deliberately):
+  - Any raw dataset, cache part, null artifact, or result table.
+  - Any headline statistic (except the 0.00463->0.00462 rounding slip,
+    artifact-verified).
+  - Negative findings (fly GABA rejection; human R2b NEGATIVE; Wilcoxon
+    median p 0.167; 1/101 p-floor) — all preserved and re-emphasized.
+  - Historical log entries and freeze-era documents (append-only
+    discipline); RELEASE archive v1.0.0 (frozen by design).
+  - PROTOCOL_FREEZE / ANALYSIS_FREEZE content (no analytical change).
+FILES MODIFIED: README.md (established/novel/not-claimed + audit note),
+  10_REPORT/NOVELTY_AUDIT.md (NEW), CLAIM_EVIDENCE_MATRIX.md (NEW),
+  10_LITERATURE/NOVELTY_MATRIX.md (2026-09-26 sweep appended),
+  10_REPORT/MANUSCRIPT_FINAL.md (Contribution-and-Novelty section; title;
+  10^5->10^3; 0.00463->0.00462; "not conserved" bounded),
+  SUBMISSION_PACKAGE/manuscript.md (same edits), SUBMISSION_PACKAGE/
+  cover_letter.md (title), SUBMISSION_PACKAGE/novelty_statement.md (sweep
+  update), SUBMISSION_PACKAGE/highlights.md (no-homology clause),
+  10_REPORT/MANUSCRIPT_DRAFT.md (flagged framing fixes),
+  10_REPORT/verify_final_numbers.py (+2 checks), RESEARCH_LOG.md (this
+  entry).
+COMMIT SHA: recorded in the git commit following this entry (see `git log
+  --oneline -1`).
+Verdict:   Framing now matches the frozen evidence; novelty bounded and
+  documented; negative results preserved; 44/44 numeric audit PASS.
+```

@@ -35,6 +35,25 @@ Cross-Scale Control Impact Study: human structural connectomes
 - Cross-scale bridge: Cliff's delta 0.100 (human) vs 0.0979 (fly) -
   the architecture replicates, the anatomy does not.
 
+## Version notes (2026-09-26 novelty-framing audit; no statistic changed)
+- `10_REPORT/NOVELTY_AUDIT.md` and `CLAIM_EVIDENCE_MATRIX.md` created:
+  bounded novelty wording, claim-by-claim evidence classes, explicit
+  NOT-claimed list (no new CIS algorithm, no universal law, no mechanism,
+  no homology, no "first ever").
+- `10_LITERATURE/NOVELTY_MATRIX.md`: 2026-09-26 sweep appended (Yadav 2025,
+  Venkadesh 2025, Niyazmand 2026 recorded as adjacent; verdict retained).
+- "Contribution and Novelty" section added to MANUSCRIPT_FINAL and the
+  submission-package manuscript (Established methods / Integration / New
+  findings / Cross-species interpretation / Limitations of the claim).
+- Framing corrections (flagged inline; artifact-verified): "universal" →
+  "near-universal" residual (778/801); "10⁵-fold" → "roughly 10³-fold"
+  node-count difference (139,255 neurons vs 456 parcels); "SIFT2" →
+  "SIFT-filtered counts"; "mechanism is not conserved" bounded to "not
+  established to be conserved".
+- MANUSCRIPT max-CIS value corrected 0.00463 → 0.00462 to match the frozen
+  artifact (`e03_summary.json` cis_mean_pop_max = 0.0046246);
+  `verify_final_numbers.py` extended to 44 checks, all PASS.
+
 ## Version notes (2026-09-26 documentation-integrity pass; no statistic changed)
 - Fixed rewire-acceptance unit bug in fill_report.py (was reported as
   7694144.8%; correct value 49.4% of attempted swaps); RESOLUTION.md and

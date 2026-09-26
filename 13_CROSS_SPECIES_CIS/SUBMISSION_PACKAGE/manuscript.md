@@ -11,7 +11,7 @@
 ## Title
 
 **Control-impact architecture of the human structural connectome: degree
-dominance, a small universal residual, and a cross-scale architectural
+dominance, a small near-universal residual, and a cross-scale architectural
 comparison with the fly connectome**
 
 ## Abstract
@@ -102,9 +102,11 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
 
 1. **Data/QC.** 900 acquired, 801 pass; E0 median 0.5468 [0.5441–0.5497];
    mean degree 68.2; 15,561 edges.
-2. **CIS distribution.** Max population-mean CIS 0.00463 (node 414); top-50
-   rate 1.00 for node 400; small magnitudes at 15% cost as expected for a
-   redundant 68-degree-mean graph.
+2. **CIS distribution.** Max population-mean CIS 0.00462 (node 414;
+   `e03_summary.json` cis_mean_pop_max = 0.0046246); top-50 rate 1.00 for
+   node 400; small magnitudes at 15% cost as expected for a redundant
+   68-degree-mean graph. *[Value corrected 2026-09-26 from "0.00463" — a
+   rounding slip; the frozen artifact gives 0.0046246 → 0.00462 at 3 s.f.]*
 3. **Degree relationship.** Median ρ(CIS, degree) = 0.943; CIS vs strength
    ρ = 0.486.
 4. **Degree-preserving null test (H1).** 200/200 subjects above null;
@@ -140,11 +142,13 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
    concentration is a stable property of individual connectomes, not a
    group-average artifact.
 5. **Cross-scale comparison.** Same effect-size statistic, same sign, same
-   degree-anchored interpretation across a 10⁵-fold node-count difference.
+   degree-anchored interpretation across a roughly 10³-fold node-count
+   difference (139,255 reconstructed neurons vs 456 parcels).
 6. **Architecture replicates but anatomy diverges.** Fly: visual-centrifugal
    residual (80% of top 50). Human: not visual (2%); nominal subcortical/
    cerebellar signal is degree-anchored and K-ladder-fragile. **R2b was
-   negative**; the mechanism selecting residual chokepoints is not conserved.
+   negative**; the present data do not establish that the mechanism
+   selecting residual chokepoints is conserved (nor that it is not).
 7. **Relationship to previous literature.** Alstott/Crossley: classic
    removal analysis, group-average, no matched controls or nulls.
    Kudriavtsev 2026: closest neighbour (lesions + nulls) but matched-mass
@@ -168,9 +172,52 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
     provenance gap disclosed.
 11. **Future work.** Directed human connectomes; multi-shell/higher-quality
     tractography; replication in BANC/larval connectomes and independent
-    human cohorts; test of the scale-invariance framing beyond two species.
+    human cohorts; test of the two-component architectural hypothesis
+    beyond two species.
 
-## 5. Data and code availability
+## 5. Contribution and Novelty
+
+**A. Established methods.** Node-removal/efficiency analysis of structural
+connectomes (Alstott 2009; Crossley 2014; degree-ordered removal on the fly
+connectome, Lin 2024), hub/rich-club analysis (van den Heuvel & Sporns
+2011), degree-preserving null models (Maslov–Sneppen), network
+controllability (Gu 2015; Betzel 2016), and cross-species connectome
+comparison (Venkadesh 2025; larval–adult Drosophila null + attack analyses,
+Yadav 2025) are each established.
+
+**B. Methodological integration.** To our knowledge, no prior study has
+combined per-node removal-based network-impact analysis, population-scale
+individual human structural connectomes, explicit degree-controlled
+residualization, degree-preserving null-model arbitration, FDR-controlled
+residual inference, and a pre-specified cross-species comparison with the
+Drosophila connectome in a single analytical framework. The novelty
+therefore lies primarily in the integration of these analyses and the
+resulting cross-scale empirical comparison, rather than in any individual
+analytical component.
+
+**C. New empirical findings.** (i) Top-50 CIS concentration exceeds
+degree-preserving null expectations in 200/200 tested subjects; (ii) a
+small degree-independent residual is detectable in 778/801 subjects
+(δ = 0.100) with 43/456 nodes surviving FDR; (iii) the residual is not
+robustly system-specific (pre-registered gate negative).
+
+**D. Cross-species interpretation.** A qualitatively similar two-component
+organization — a dominant connectivity-dependent component plus a smaller
+degree-independent residual — appears in both the human and Drosophila
+analyses despite roughly three orders of magnitude difference in analyzed
+node count and non-homologous anatomy. These results motivate the
+hypothesis that two-component control-impact organization recurs across
+nervous systems of very different scale; they do not establish anatomical
+homology, a conserved biological mechanism, or a universal law.
+
+**E. Limitations of the novelty claim.** The claim is bounded by the
+documented literature audit (`10_LITERATURE/NOVELTY_MATRIX.md`; E00/E17/
+E17a plus the 2026-09-26 update) and one outstanding condition: a human
+full-text read of the closest neighbour (Kudriavtsev et al. 2026). The
+audit cannot exclude occupation of the combination in sources not surfaced
+by the queries used. Full audit: `10_REPORT/NOVELTY_AUDIT.md`.
+
+## 6. Data and code availability
 
 Data: AOMIC-ID1000 (Zenodo 19796783, CC-BY-4.0). Fly reference: frozen
 release v1.0.0 artifacts (read-only). All human-side code, manifests,

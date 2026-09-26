@@ -94,7 +94,7 @@ reported as a boundary condition on the fly result, not a failure.
    near-universal*; both are reported, neither suppressed.
 6. **Multiple-comparisons surface:** per-node FDR (456 tests) and enrichment
    p-values are the only confirmatory families; everything else is descriptive.
-7. **Single derivative pipeline** (AOMIC-ID1000, SIFT2); no second-acquisition
+7. **Single derivative pipeline** (AOMIC-ID1000, SIFT-filtered counts *[label corrected 2026-09-26; was "SIFT2"]*); no second-acquisition
    replication is in scope.
 
 ## 5. Verification chain

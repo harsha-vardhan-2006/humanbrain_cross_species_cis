@@ -44,7 +44,9 @@ after seeing the numbers.
 
 ## 2. Methods skeleton (already determined by frozen code)
 
-- **Dataset:** AOMIC-ID1000 (900 subjects), SIFT2 structural connectomes,
+- **Dataset:** AOMIC-ID1000 (900 subjects), SIFT-filtered streamline-count
+  structural connectomes *[label corrected 2026-09-26; was "SIFT2" — the
+  primary weight is `sift_radius2_count_connectivity`]*
   7 atlases; primary = 4S456Parcels, sift_radius2_count weight, 15% cost.
   [T: ../00_Metadata/AOMIC_VERIFICATION_REPORT.md; 00_MANIFEST/manifests/]
 - **Preprocessing:** symmetric verification, diagonal zeroing, proportional
