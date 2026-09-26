@@ -57,6 +57,11 @@ framework with a pre-registered cross-scale comparison."* —
 `10_LITERATURE/NOVELTY_MATRIX.md`; `10_REPORT/NOVELTY_AUDIT.md`;
 `CLAIM_EVIDENCE_MATRIX.md`.
 
+Reproduction: `REPRODUCIBILITY.md` maps the full pipeline (exact commands,
+seeds, environment, runtimes); `10_REPORT/verify_final_numbers.py`
+re-audits every headline number from frozen artifacts (44/44 PASS);
+`10_REPORT/REVIEWER_AUDIT.md` records the final simulated-reviewer QC.
+
 ## Status (2026-09-26, post-freeze audit)
 
 - P0 provenance: DONE (see `..\00_Metadata\AOMIC_VERIFICATION_REPORT.md`,
@@ -79,6 +84,11 @@ framework with a pre-registered cross-scale comparison."* —
   added to the manuscripts; framing overclaims corrected (universal →
   near-universal; 10⁵ → 10³ fold; SIFT2 → SIFT-filtered counts;
   "not conserved" bounded). No numeric result changed; no analysis rerun.
+- 2026-09-26 final packaging: `REPRODUCIBILITY.md` (pipeline map with exact
+  commands, seeds, runtimes) and `10_REPORT/REVIEWER_AUDIT.md` (simulated
+  five-reviewer QC: 0 critical, 0 high open issues) added;
+  "Negative and Null Findings" + Conclusion sections added to the
+  manuscripts; release archive SHA256 re-verified OK.
 
 ## Key documents
 

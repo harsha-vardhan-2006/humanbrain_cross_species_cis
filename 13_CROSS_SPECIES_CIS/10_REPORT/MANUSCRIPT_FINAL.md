@@ -221,7 +221,56 @@ no cross-scale bridge). The audit cannot exclude occupation of the
 combination in sources not surfaced by the queries used. Full audit:
 `10_REPORT/NOVELTY_AUDIT.md`.
 
-## 6. Data and code availability
+## 6. Negative and Null Findings
+
+The following negative results are first-class outcomes of this study and are
+preserved as such:
+
+1. **Human system-specific gate (R2b) NEGATIVE.** No pre-specified
+   sensory/visual system was enriched in the residual (Vis z_B = −0.38 at
+   K = 50). The single nominal signal (Subcortical/Cerebellar: z_B = 2.08,
+   p = .031, 1.25×) is absent at K = 25 (z_B = 0.81) and degree-anchored.
+   No robust canonical-system-specific explanation of the residual was
+   established (H3 not supported).
+2. **Fly GABA/inhibitory-specific hypothesis REJECTED.** The raw
+   matched-pair GABA–ACh effect (δ = 0.111, p = 0.0011) did not survive the
+   degree-preserving null ensemble (observed δ = 0.098 at matched panel
+   size vs null 0.071 ± 0.022; empirical p = 0.109; median-difference
+   p = 0.782; z = 1.21). This methodological lesson — matched-pair
+   significance can dissolve under degree-preserving nulls — motivated the
+   two-layer control design used here.
+3. **Fly residual effect size not null-surviving.** The fly residual
+   δ = 0.0979 itself did not pass the same null criterion (p = 0.109); the
+   cross-scale δ agreement is therefore reported as interesting but partly
+   fortuitous (different units of analysis, graphs, and designs).
+4. **Per-subject empirical p-values (battery B) do not resolve the tail.**
+   All sit at the 1/101 resolution floor; per-subject inference rests on the
+   z-vs-null statistic and the population sign test.
+5. **Subcortical residual is not robust across the pre-registered K ladder**
+   and its FDR cluster overlaps the same node block as the nominal
+   enrichment — R2a and R2b are not independent confirmations.
+6. **No causal, homology, mechanism, or universal-law claim is made** at any
+   point in this manuscript; the cross-scale similarity is an empirical
+   architectural observation and a hypothesis-generating finding.
+
+## 7. Conclusion
+
+Across 801 individual human structural connectomes and the Drosophila
+connectome, structural network impact decomposes into a dominant
+connectivity-dependent component and a smaller degree-independent residual.
+Top-50 impact concentration exceeds degree-preserving null expectations in
+every tested human subject; the residual is directionally near-universal
+(778/801; δ = 0.100) with 43/456 nodes surviving FDR; and the residual is
+not robustly system-specific. The qualitatively similar two-component
+organization at both scales — despite roughly three orders of magnitude
+difference in analyzed node count and non-homologous anatomy — supports a
+bounded cross-scale architectural observation: architecture replicates;
+anatomy does not. The finding motivates the hypothesis that two-component
+control-impact organization may recur across nervous-system scales, and
+defines the null-arbitration methodology needed to test that hypothesis on
+future connectomes.
+
+## 8. Data and code availability
 
 Data: AOMIC-ID1000 (Zenodo 19796783, CC-BY-4.0). Fly reference: frozen
 release v1.0.0 artifacts (read-only). All human-side code, manifests,
