@@ -1202,3 +1202,45 @@ Verdict:   Repository is publication-ready and synchronized; the only
   open item is the human creation of the v1.1.0 GitHub Release (or
   providing credentials for it), plus venue selection/submission.
 ```
+
+## E28 — PUBLICATION-READINESS FINAL PASS (2026-09-26, late; documentation only)
+
+```
+Date:        2026-09-26
+Scope:       Author-directed final publication-readiness pass. No scientific
+             rerun; frozen results untouched.
+GIT:         HEAD = origin/main = 2a4d62c (17 commits; local == remote ==
+             GitHub-API-verified); v1.1.0 (annotated, 0d35c47) peels to
+             dd5389b — UNCHANGED and NOT MOVED; worktree clean; full
+             (non-shallow) history; fsck connectivity clean. GitHub holds
+             the complete 17-commit chain (API-verified; the earlier "9
+             commits" observation was a stale/cached browser view of an
+             interrupted earlier session).
+VERIFICATION: verify_final_numbers.py 46/46 PASS (rerun this pass).
+PLACEHOLDER SWEEP: extended token set (TBD/TODO/PLACEHOLDER/FIXME/XXX/
+             ???/AUTHOR NAME/INSERT/TEMP) across manuscript, supplementary,
+             captions, submission package, READMEs: zero accidental
+             placeholders. Remaining hits are benign: real filename
+             MANUSCRIPT_DRAFT.md (provenance line), glob pattern sub-XXXX.csv
+             (artifact inventory), and audit documents describing the fix.
+E06:         Re-verified: no document presents "<=0.0026" as a preregistered
+             gate; DESCRIPTIVE-PASS framing and exact value 0.0026194
+             (atlas_AAL116) intact everywhere.
+JOURNAL OPTIONS: verified addendum appended for the three author-named
+             venues (npj Complexity USD 2,790 APC; PLOS Computational
+             Biology USD 2,500 standard / USD 940 reduced-program; Frontiers
+             in Neuroscience A-type USD 3,295) — scope, article types,
+             waivers, preprint compatibility, data/code policy, from
+             official/indexed publisher sources dated 2026-09-26. Neutral;
+             no ranking; no venue chosen for the author.
+PREPRINT:    PREPRINT_CHECKLIST.md added (bioRxiv-neutral): all items READY
+             except three author-only decisions (email/ORCID entry, preprint
+             license, final read-through). Nothing uploaded.
+RELEASE:     GitHub Release for v1.1.0 still NOT created (requires the
+             owner's authenticated action); tag itself IS pushed. Release
+             URL provided to the author.
+Verdict:   Publication-ready: submission package, verified renderings,
+  bounded claims, 46/46 verification, synchronized history, tag pushed.
+  Remaining manual actions: publish the v1.1.0 GitHub Release, choose the
+  venue, enter contact details in submission systems, submit.
+```

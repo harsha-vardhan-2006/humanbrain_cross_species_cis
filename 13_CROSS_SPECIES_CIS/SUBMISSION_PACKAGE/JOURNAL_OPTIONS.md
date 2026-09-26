@@ -32,3 +32,25 @@ computational/network neuroscience.
 - Preprint posting (bioRxiv) before submission is compatible with all
   candidates and is recommended by several; the Kudriavtsev full-text gate
   is CLOSED (verified via proxy 2026-09-26), so no posting blocker remains.
+
+## 2026-09-26 verified addendum — candidate venues named by the author
+
+Verified from official/indexed publisher sources on 2026-09-26 (still verify
+at submission; APCs change). Factual comparison only — **no ranking**.
+
+| Criterion | npj Complexity (Nature Portfolio) | PLOS Computational Biology | Frontiers in Neuroscience |
+|---|---|---|---|
+| Publisher / model | Springer Nature; fully open access, CC BY | PLOS; fully open access, CC BY | Frontiers; fully open access, CC BY |
+| Scope | Complex systems across fields (network science, multi-scale complex systems incl. living systems) | Computational methods applied to biology/neuroscience; methods rigor valued | Broad neuroscience, cells→systems; section-based structure |
+| Fit for this manuscript (factual) | Network/architecture framing fits; neuroscience-specific audience smaller | Methods-combination + statistical-audit culture fits directly | Broad reach; network-neuroscience section exists (specialty handled via sections/editors) |
+| Article types | Research articles (also brief communications/reviews per journal site) | Research articles; methods/new-tool formats | Original Research, Methods, Hypothesis & Theory, etc. |
+| APC (verified 2026-09-26) | **USD 2,790** (≈ EUR 2,290 / GBP 1,990 per Springer Nature 2026 OA price list; journal APC page) | **USD 2,500** standard; **USD 940** reduced in countries in the PLOS fee program; institutional agreements may cover | A-type articles **USD 3,295** (current listed APC for Original Research) |
+| Waivers/discounts | Springer Nature low/middle-income country waivers; institutional agreements | Fee-assistance program (apply at/after submission); institutional partnerships | Frontiers waiver program (low/middle-income; apply before acceptance) |
+| Preprint policy | Preprint posting compatible (Springer Nature: preprints allowed, not considered prior publication) | Preprints **encouraged**; allowed at any stage | Preprint posting compatible per Frontiers policy |
+| Data/code policy | FAIR-aligned availability statements (Nature Portfolio policy) | **Mandatory** data + code availability statements; strong audit norms | Availability statements required at submission |
+| Word/figure limits | No hard limits stated on journal site (concise encouraged) | ~6,000 words typical guide; no hard figure cap | No hard limit; structured abstract required |
+| Notable operational notes | ORCID recommended; CC BY mandatory | Code review norms; submission via APERTA | Section/editor assignment at submission; ORCID required |
+
+All three venues are compatible with a bioRxiv preprint and with the
+repository's public-data/public-code/MIT-licensing setup. The author selects
+the venue; this document intentionally makes no recommendation.
