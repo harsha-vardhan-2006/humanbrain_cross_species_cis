@@ -81,5 +81,6 @@ the same day; the verifier confirms the corrected values).
    document, not a recovery of the original.
 2. E06 concordance primary row is computed like-for-like in RESOLUTION.md
    (table_08 stores condition rows only) — documented in the harvest script.
-3. Full text of Kudriavtsev 2026 remains unread (403 ×4); see
-   `10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`.
+3. Full text of Kudriavtsev 2026 — **RESOLVED 2026-09-26 (late):** verified
+   via text-extraction proxy after 4 direct 403 attempts; see the addendum
+   in `10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`.

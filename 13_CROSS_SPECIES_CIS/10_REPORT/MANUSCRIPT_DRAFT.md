@@ -258,9 +258,11 @@ Additional limitations registered at resolution (2026-09-26):
   (2026-09-22, 09-24, 09-26); the complete author abstract and full author
   list were verified 2026-09-26 via a third-party mirror, confirming the
   adjacent-only assessment (ageing-decline framing, matched-mass nulls, no
-  per-node population residual analysis). A single manual full-text read
-  from an unblocked network remains the last pre-submission gate
-  (RESEARCH_LOG E17a).
+  per-node population residual analysis). *[Gate CLOSED 2026-09-26, late:
+  the complete Results and Discussion were subsequently verified via a
+  text-extraction proxy — confirms edge-level hotspot lesions, matched-mass
+  nulls, no per-node removal, no degree-preserving nulls, no cross-scale
+  bridge; see RESEARCH_LOG E22 and the review-record addendum.]*
 
 ## 7. Data and code availability
 

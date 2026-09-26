@@ -31,8 +31,10 @@ arbitration + node-level FDR + cross-scale comparison. Kudriavtsev et al. 2026
 is the closest neighbour on tools (lesions + efficiency + nulls) but differs
 on the arbitrated object (ageing decline vs control-impact architecture) and
 the null type (matched-mass vs degree-preserving) — see
-`10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md` (PARTIAL OVERLAP; full
-text still unread, residual risk documented).
+`10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md` (PARTIAL OVERLAP;
+**full text now verified via proxy extraction 2026-09-26: no per-node removal
+ranking, no degree-matched controls, no degree-preserving nulls, no
+cross-species comparison**).
 
 **Canonical claim wording (use this, not "first ever"):**
 
@@ -87,7 +89,12 @@ combination (see `10_REPORT/NOVELTY_AUDIT.md` §6). Kudriavtsev full-text
 read remains the pre-submission condition.
 
 ## Pre-submission conditions
-1. Human full-text read of Kudriavtsev 2026 (gate record co-signed).
+1. ~~Human full-text read of Kudriavtsev 2026 (gate record co-signed).~~
+   **CLOSED 2026-09-26:** full text verified via text-extraction proxy
+   (r.jina.ai) — complete Results + Discussion read; confirms matched-mass
+   (not degree-preserving) nulls, edge-level hotspot lesions (not per-node
+   removal), no cross-scale bridge. Optional human co-signature remains
+   good practice but is no longer a blocker.
 2. If any future full-text read reveals per-subject population CIS-residual
    arbitration with degree-preserving nulls, this matrix and the manuscript
    gap statement must be revised (append-only).

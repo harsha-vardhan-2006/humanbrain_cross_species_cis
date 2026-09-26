@@ -839,3 +839,67 @@ Verdict:   Repository now presents the scientific project first while
   retaining complete provenance; framing, novelty, and negatives are
   publication-defensible; 44/44 numeric audit PASS.
 ```
+
+## E22 — LITERATURE GATE CLOSED + FIGURE 5 RENDERED (2026-09-26, late)
+
+```
+Date:        2026-09-26
+Context:     Two of the three outstanding pre-submission items were
+             agent-executable and are now DONE. No analysis rerun; no
+             numeric change; raw data untouched.
+
+(1) KUDRIAVTSEV 2026 FULL-TEXT GATE — CLOSED.
+    Fifth documented attempt. Direct biorxiv.org access (HTML + PDF)
+    remained 403, but a text-extraction proxy (r.jina.ai) returned the
+    COMPLETE full-text HTML (Results + Discussion; methods-relevant
+    content within). Verified new facts: n=144 across two datasets
+    (AAL-90, 30% consistency threshold); per-participant
+    cluster-proportional EDGE-level lesions (raw minus cluster-through
+    tractography); matched-MASS nulls (10,000 permuted lesions per
+    participant); GE reduction below null in 166/166 (p=1.07e-50);
+    positive hub-disruption index; nodewise degree/clustering loss maps
+    (29 frontal/cingulate/subcortical above-chance; 49 sensory/temporo-
+    limbic below-chance); graded rich-club hotspot dependence.
+    CONFIRMED ABSENT in full text: per-node removal ranking (CIS),
+    degree-matched controls, degree-preserving null ensembles,
+    cross-species comparison. All four decisive overlap components are
+    excluded by the verified text — the bounded novelty wording stands,
+    now grounded in full text rather than abstract-only.
+    Records updated: KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md (addendum with
+    re-answered gate questions 1-10); NOVELTY_MATRIX.md (verdict +
+    conditions); NOVELTY_AUDIT.md (sections 9 and 10-E);
+    MANUSCRIPT_FINAL + SUBMISSION manuscript (limitations + novelty-E);
+    MANUSCRIPT_DRAFT (limitations, flagged inline); FINAL_GATE_REPORT
+    (D: gate CLOSED; I: condition closed); FINAL_RESEARCH_STATUS;
+    FINAL_REPRODUCIBILITY_AUDIT (note 3); SUBMISSION_PACKAGE (README,
+    novelty_statement, reproducibility_statement, JOURNAL_OPTIONS).
+    Optional remaining human action: author co-signature of the gate
+    record (no longer a submission blocker).
+
+(2) FIGURE 5 — RENDERED FROM FROZEN ARTIFACTS.
+    08_FIGURES/make_fig05_anatomical.py reads table_07_null_results.csv
+    + atlas_4S456_system_labels.csv READ-ONLY, asserts the frozen
+    43-survivor count, and renders fig05_fdr_anatomical.{png,pdf}.
+    Result: Subcortical_Cerebellar 39, Limbic 2, Default 2; max
+    Stouffer z 23.30 (matches frozen table_07 exactly; no statistics
+    recomputed). System mapping of survivors is consistent with the
+    degree-anchored subcortical concentration documented in the
+    manuscript (§5.2); the figure adds no new claim.
+    FIGURE_PROVENANCE.md updated (paper-Fig. 5 slot; note that the older
+    fig05_degree_controlled.* file keeps its paper-Fig. 4 role);
+    SUBMISSION_PACKAGE/README, FINAL_GATE_REPORT (F: complete; I), and
+    FINAL_RESEARCH_STATUS (task 3) updated.
+
+NOT changed: all headline statistics; raw data; caches; null artifacts;
+  historical log entries; tags; release archive v1.0.0 (frozen by design;
+  audit documents live in git per the established policy).
+Validation:  verify_final_numbers.py 44/44 PASS after edits; git diff
+  --check clean; only .md files + one new figure-render script + its two
+  figure outputs (PNG/PDF, derived solely from frozen artifacts) added.
+Remaining before submission (all human): author placeholders in
+  SUBMISSION_PACKAGE; PDF/DOCX typesetting; optional gate-record
+  co-signature; venue choice.
+Verdict:   Literature gate CLOSED with a strengthened evidentiary basis;
+  figure set complete; repository remains frozen-audited and
+  publication-ready.
+```

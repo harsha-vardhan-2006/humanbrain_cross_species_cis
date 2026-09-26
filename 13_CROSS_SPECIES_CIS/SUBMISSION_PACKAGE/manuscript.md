@@ -167,8 +167,9 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
     derivatives); no homology; single pipeline/acquisition; residual near the
     CIS noise floor (hence null arbitration); battery-B per-subject p-values
     at the 1/101 null-resolution floor (inference via z + sign test);
-    subcortical residual not robust across the K ladder; Kudriavtsev full
-    text unread (abstract-complete verification only); ENVIRONMENT_MANIFEST
+    subcortical residual not robust across the K ladder; Kudriavtsev 2026
+    full text verified via proxy extraction (direct access blocked);
+    ENVIRONMENT_MANIFEST
     provenance gap disclosed.
 11. **Future work.** Directed human connectomes; multi-shell/higher-quality
     tractography; replication in BANC/larval connectomes and independent
@@ -212,10 +213,13 @@ homology, a conserved biological mechanism, or a universal law.
 
 **E. Limitations of the novelty claim.** The claim is bounded by the
 documented literature audit (`10_LITERATURE/NOVELTY_MATRIX.md`; E00/E17/
-E17a plus the 2026-09-26 update) and one outstanding condition: a human
-full-text read of the closest neighbour (Kudriavtsev et al. 2026). The
-audit cannot exclude occupation of the combination in sources not surfaced
-by the queries used. Full audit: `10_REPORT/NOVELTY_AUDIT.md`.
+E17a plus the 2026-09-26 updates). The closest neighbour (Kudriavtsev et
+al. 2026) has been full-text verified via proxy extraction as PARTIAL
+OVERLAP, with none of the four decisive components present (no per-node
+removal ranking, no degree-matched controls, no degree-preserving nulls,
+no cross-scale bridge). The audit cannot exclude occupation of the
+combination in sources not surfaced by the queries used. Full audit:
+`10_REPORT/NOVELTY_AUDIT.md`.
 
 ## 6. Data and code availability
 

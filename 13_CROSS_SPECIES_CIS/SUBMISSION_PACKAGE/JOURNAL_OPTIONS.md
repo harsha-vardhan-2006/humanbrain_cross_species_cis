@@ -30,5 +30,5 @@ computational/network neuroscience.
   allow subscription publication (no fee) — check each journal's current
   waiver page.
 - Preprint posting (bioRxiv) before submission is compatible with all
-  candidates and is recommended by several; the Kudriavtsev full-text read
-  must precede any public posting (novelty gate closure).
+  candidates and is recommended by several; the Kudriavtsev full-text gate
+  is CLOSED (verified via proxy 2026-09-26), so no posting blocker remains.

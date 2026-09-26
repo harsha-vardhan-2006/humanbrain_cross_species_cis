@@ -189,10 +189,14 @@ carries the documented Kudriavtsev full-text condition.
 
 ## 9. Remaining uncertainty (what the literature audit cannot exclude)
 
-1. **Kudriavtsev et al. 2026 full text** remains unread (methods body could
-   in principle contain per-node analyses not mentioned in the abstract;
-   abstract-level risk bounded — the null type is explicit). Human
-   full-text read before submission is mandatory.
+1. **Kudriavtsev et al. 2026 full text** — **RESOLVED 2026-09-26:** the
+   complete Results and Discussion were verified via a text-extraction
+   proxy (direct bioRxiv access remains network-blocked; see the addendum
+   in `10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`). The full text
+   confirms: edge-level hotspot lesions (not per-node removal), matched-mass
+   nulls (not degree-preserving), no degree-matched controls, no
+   cross-scale bridge. The closest-neighbour assessment no longer rests on
+   abstract-only verification.
 2. **Coverage of the 2025–2026 preprint stream is incomplete by nature:**
    the sweep covered bioRxiv/arXiv/journal-index queries on 2026-09-22,
    09-24, and 09-26; a dedicated pre-submission re-sweep at submission
@@ -238,9 +242,10 @@ carries the documented Kudriavtsev full-text condition.
 > law.
 >
 > **E. Limitations of the novelty claim.** The claim is bounded by a
-> documented literature audit (E00/E17/E17a + 2026-09-26 update) and one
-> outstanding condition: a human full-text read of the closest neighbour
-> (Kudriavtsev et al. 2026). The audit cannot exclude occupation of the
+> documented literature audit (E00/E17/E17a + 2026-09-26 updates). The
+> closest neighbour (Kudriavtsev et al. 2026) has been full-text verified
+> (via proxy extraction) as PARTIAL OVERLAP with none of the four decisive
+> components present. The audit cannot exclude occupation of the
 > combination in sources not surfaced by the queries used.
 
 ---

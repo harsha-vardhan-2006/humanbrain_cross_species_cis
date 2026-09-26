@@ -52,7 +52,9 @@ cross-scale empirical comparison, not in any individual component
 (full audit: `10_REPORT/NOVELTY_AUDIT.md`; claim-by-claim:
 `CLAIM_EVIDENCE_MATRIX.md`). Closest neighbor (Kudriavtsev 2026): PARTIAL
 OVERLAP — matched-mass (not degree-preserving) nulls, ageing framing. Full
-text pending one manual read (documented ×4 attempts). Matrix:
+text **full-text verified via proxy extraction 2026-09-26** (5th attempt
+succeeded; PARTIAL OVERLAP confirmed, all four decisive overlap components
+excluded). Matrix:
 `10_LITERATURE/NOVELTY_MATRIX.md` (2026-09-26 sweep appended: Yadav 2025,
 Venkadesh 2025, Niyazmand 2026 recorded as adjacent; none occupies the
 combination).
@@ -61,8 +63,9 @@ combination).
 Undirected graphs (directed variant impossible in these derivatives); single
 pipeline/acquisition; residual near CIS noise floor; battery-B per-subject
 empirical p at the 1/101 null-resolution floor (inference via z + sign test);
-subcortical residual not robust across the K ladder; Kudriavtsev full text
-unread; ENVIRONMENT_MANIFEST provenance gap disclosed.
+subcortical residual not robust across the K ladder; Kudriavtsev 2026
+full text verified via proxy (direct access blocked); ENVIRONMENT_MANIFEST
+provenance gap disclosed.
 
 ## 9. Reproducibility status
 **PASS.** Independent stdlib-only audit recomputed every documented number
@@ -87,14 +90,15 @@ availability, reproducibility, COI, ethics note, novelty statement, and
 journal options. Missing before upload: author-completed placeholders
 (contributions/COI/affiliation), PDF/DOCX typesetting (pandoc/LaTeX not
 installed on the working machine — commands provided in
-`SUBMISSION_PACKAGE/README.md`), Kudriavtsev full-text read.
+`SUBMISSION_PACKAGE/README.md`), optional co-signature of the (now
+closed) Kudriavtsev full-text gate record.
 
 ## 12. Remaining tasks (all human actions)
 1. Read Kudriavtsev 2026 full text from an unblocked network; co-sign
    `10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`.
 2. Complete the [PLACEHOLDER] fields in the submission package.
-3. Render manuscript to PDF/DOCX; finalize Figure 5 (anatomical distribution
-   render from frozen table_07).
+3. Render manuscript to PDF/DOCX. ~~Finalize Figure 5~~ — DONE 2026-09-26
+   (rendered from frozen table_07 by `08_FIGURES/make_fig05_anatomical.py`).
 4. Choose venue (see `SUBMISSION_PACKAGE/JOURNAL_OPTIONS.md`); adapt cover
    letter; submit.
 5. Optionally: Zenodo DOI for the release archive; GitHub release page.

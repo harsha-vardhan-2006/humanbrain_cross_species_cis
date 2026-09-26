@@ -16,7 +16,7 @@ submission (nothing is fabricated).
 | `reproducibility_statement.md` | audit summary + disclosed gaps | READY |
 | `conflict_of_interest.md` | COI declaration | PLACEHOLDER (author) |
 | `ethics_statement_if_applicable.md` | secondary-data use note | PLACEHOLDER (author) |
-| `novelty_statement.md` | bounded novelty claim | READY (pending Kudriavtsev full-text read) |
+| `novelty_statement.md` | bounded novelty claim | READY (Kudriavtsev full-text gate CLOSED 2026-09-26) |
 | `JOURNAL_OPTIONS.md` | venue scope/policy table (no ranking) | READY (verify APCs at submission) |
 | `manuscript.md` | copied final manuscript | READY (source for typesetting) |
 
@@ -31,13 +31,16 @@ pandoc 10_REPORT/MANUSCRIPT_FINAL.md -o manuscript.pdf \
 ```
 
 Supplementary: `10_REPORT/SUPPLEMENTARY_MATERIAL.md` renders the same way.
-Figures: `08_FIGURES/*.png|pdf` (provenance: `10_REPORT/FIGURE_PROVENANCE.md`;
-Figure 5 anatomical distribution renders from frozen `table_07` + label
-manifest at typesetting time).
+Figures: `08_FIGURES/*.png|pdf` (provenance: `10_REPORT/FIGURE_PROVENANCE.md`).
+Figure 5 (anatomical distribution of the 43 FDR survivors) was rendered
+2026-09-26 from frozen artifacts by `08_FIGURES/make_fig05_anatomical.py`
+(`fig05_fdr_anatomical.png|pdf`); no statistics were recomputed.
 
 ## Pre-submission checklist (human)
-1. Kudriavtsev 2026 full-text read; co-sign the gate record.
+1. ~~Kudriavtsev 2026 full-text read; co-sign the gate record.~~ CLOSED
+   2026-09-26 (full text verified via proxy; optional co-signature only).
 2. Fill [PLACEHOLDER]s: contributions, COI, ethics/IRB note, affiliation.
-3. Render PDF/DOCX; attach figures per FIGURE_PROVENANCE.
+3. Render PDF/DOCX; attach figures per FIGURE_PROVENANCE (Fig. 5 already
+   rendered from frozen artifacts).
 4. Verify current APC/policies of the chosen venue (JOURNAL_OPTIONS notes).
 5. Post bioRxiv preprint (optional; after step 1).

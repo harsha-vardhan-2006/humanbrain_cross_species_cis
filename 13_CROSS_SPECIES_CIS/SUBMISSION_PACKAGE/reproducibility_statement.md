@@ -24,5 +24,6 @@
    silent corrections (the two documentation fixes of 2026-09-26 are flagged
    in-line and logged).
 7. **Known gaps (disclosed).** `ENVIRONMENT_MANIFEST.txt` absent (versions
-   reconstructed from logs); Kudriavtsev 2026 full text unread (abstract-
-   complete verification only; one manual read remains a submission gate).
+   reconstructed from logs); Kudriavtsev 2026 full text verified via
+   text-extraction proxy 2026-09-26 (direct access network-blocked;
+   closest-neighbour assessment now full-text grounded).

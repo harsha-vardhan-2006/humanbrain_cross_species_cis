@@ -33,5 +33,8 @@ A dedicated pre-submission sweep of 2025–2026 preprints (E17), a
 re-verification of the closest neighbor (E17a), and an updated 2026-09-26
 sweep (recording Yadav 2025, Venkadesh 2025, and Niyazmand 2026 as adjacent
 work — see `10_LITERATURE/NOVELTY_MATRIX.md`) found no occupation of this
-combination; the remaining gate is one manual full-text read of Kudriavtsev
-et al. 2026. Full audit: `10_REPORT/NOVELTY_AUDIT.md`.
+combination. The closest neighbor (Kudriavtsev et al. 2026) has since been
+**full-text verified** via proxy extraction: its lesions are edge-level and
+hotspot-constrained, its nulls are matched-mass (not degree-preserving), and
+it contains no per-node removal ranking, no degree-matched controls, and no
+cross-scale bridge. Full audit: `10_REPORT/NOVELTY_AUDIT.md`.
