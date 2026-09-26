@@ -14,6 +14,7 @@ import io
 import json
 import math
 import os
+import re
 import statistics
 import sys
 from collections import Counter
@@ -187,14 +188,20 @@ check("Rewire acceptance rate (corrected)", 0.494, round(rate, 3), tol=5e-3,
 # ------------------------------------------------------------ E06 robustness
 t8 = read_csv(os.path.join(BASE, "09_TABLES", "table_08_robustness.csv"))
 check("E06 configuration count", 9, len(t8))
-if all("top50_delta_vs_primary" in r for r in t8):
-    maxd = max(abs(float(r["top50_delta_vs_primary"])) for r in t8)
-    check("E06 max |top50 delta vs primary| <= 0.0026", True, bool(maxd <= 0.0026 + 1e-12),
-          note=f"max delta = {maxd:.6f}")
-else:
-    # primary row is not in table_08 (computed like-for-like in RESOLUTION);
-    # fall back to RESOLUTION concordance values
-    print("       (table_08 has no primary-delta column; RESOLUTION.md concordance used)")
+# No numeric tolerance was pre-registered for E06; the concordance is a
+# descriptive comparison. Verify the authoritative max like-for-like delta
+# (atlas_AAL116) at full precision against the RESOLUTION.md concordance.
+res_path = os.path.join(BASE, "10_REPORT", "RESOLUTION.md")
+if os.path.exists(res_path):
+    with open(res_path, encoding="utf-8") as f:
+        res_text = f.read()
+    m_aal = re.search(r"atlas_AAL116\s+150\s+([\d.]+)\s+([\d.]+)", res_text)
+    if m_aal:
+        aal_mean = float(m_aal.group(1))
+        aal_delta = float(m_aal.group(2))
+        check("E06 atlas_AAL116 top50 mean (max-deviation config)", 0.003848, aal_mean, tol=5e-7)
+        check("E06 max like-for-like top50 delta (atlas_AAL116)", 0.002619, aal_delta, tol=5e-7,
+              note="full precision 0.0026194; descriptive, no pre-registered tolerance")
 
 # ------------------------------------------------------------- fly artifacts
 fly = None

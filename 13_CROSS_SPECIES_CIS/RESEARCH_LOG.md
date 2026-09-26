@@ -1015,3 +1015,69 @@ Verdict:   PUBLICATION-READY WITH HUMAN ACTIONS (author placeholders,
   PDF/DOCX typesetting, optional v1.1.0 tag + co-signature). No
   critical or high scientific issues remain.
 ```
+
+## E25 — E06 THRESHOLD CLARIFICATION (2026-09-26, late; documentation correction)
+
+```
+Date:        2026-09-26
+Trigger:     External audit flagged a mathematical inconsistency: documents
+             stated "all 9 E06 configs within 0.0026 of primary" while the
+             RESOLUTION concordance table itself prints a max delta of
+             0.002619 > 0.0026. Correct observation; investigation follows.
+Authoritative determination (from artifacts + scripts, no analysis rerun):
+  1. AUTHORITATIVE MAX LIKE-FOR-LIKE DELTA: 0.002619 (full precision
+     0.0026194222705877377), condition atlas_AAL116 (top50 mean 0.0038480
+     vs like-for-like primary 0.0012286 on the same n=150 cohort).
+     Independently recomputed at full precision from the frozen
+     subject_cis CSVs using the exact robustness_subjects() cohort
+     (seed 20260922) and the same top-50-mean-of-means definition as
+     fill_report.concordance(); reproduces the printed 0.002619 exactly.
+  2. PRE-SPECIFIED TOLERANCE: NONE EXISTS. PROTOCOL_FREEZE and
+     STUDY_DESIGN define E06 as an architecture-summary concordance
+     comparison with NO numeric pass/fail threshold. The "0.0026" figure
+     first appears in the E04-E10 RESOLUTION harvest-log entry
+     (2026-09-23) as a 2-significant-figure rounding of the observed
+     0.002619 — i.e., it was derived AFTER seeing the numbers, then
+     treated in later documents as if it were a gate.
+  3. WAS 0.002619 ROUNDED/TRUNCATED? The value itself is exact at 6 dp;
+     the "0.0026" statements were roundings of it (2 s.f.), not the
+     reverse. Nothing was truncated to force a PASS.
+  4. PASS/FAIL DETERMINATION: The question "does 0.002619 <= 0.0026" is
+     ill-posed because 0.0026 was never a pre-specified criterion. Under
+     the actual pre-specified design, E06 is a descriptive concordance
+     analysis with no pass/fail gate; its result stands as: 9/9 configs
+     reproduce the primary architecture, max deviation 0.00262
+     (atlas_AAL116), direction-consistent. We therefore classify E06 as
+     DESCRIPTIVE-PASS (no gate defined), not as a borderline FAIL of a
+     gate that never existed. Any future reader is free to judge the
+     0.00262 magnitude against their own criterion — the exact value is
+     now stated everywhere.
+CORRECTIONS MADE (documentation only; no statistic changed):
+  - MANUSCRIPT_FINAL + SUBMISSION manuscript (Results item 8): exact value
+    + explicit no-pre-registered-tolerance statement.
+  - MANUSCRIPT_DRAFT (falsifiability paragraph): same, flagged inline.
+  - SUPPLEMENTARY_MATERIAL S9: exact value + primary full precision.
+  - FINAL_RESEARCH_STATUS: exact value + no-tolerance statement.
+  - FINAL_REPRODUCIBILITY_AUDIT table row: documented vs recomputed now
+    both 0.0026194; status VERIFIED (not a <= 0.0026 PASS).
+  - REVIEWER_AUDIT: reviewer-B mitigation line updated.
+  - CLAIM_EVIDENCE_MATRIX row 23: evidence + allowed wording updated;
+    explicit instruction never to state a 0.0026 pass/fail gate.
+  - SUBMISSION_PACKAGE reproducibility_statement: same fix.
+  - verify_final_numbers.py: the conditional "<= 0.0026" check (which
+    could never trigger, since table_08 lacks a delta column) REPLACED by
+    two full-precision checks of the authoritative values (atlas_AAL116
+    mean 0.003848; max delta 0.002619) parsed from RESOLUTION.md.
+    Checks now: 46/46 PASS.
+  - RESOLUTION.md: clarification block appended (flagged, append-only).
+Validation:  verify_final_numbers.py 46/46 PASS; repository-wide grep for
+  "0.0026" shows remaining occurrences only as: the rounded historical
+  log entries (E19/harvest, preserved), correction notes referencing the
+  fix, and this entry. No current document states "within 0.0026" as a
+  gate any longer.
+No other scientific modification made.
+Final commit SHA: recorded in the commit following this entry.
+Verdict:   Documentation now states the exact authoritative E06 value and
+  correctly characterizes the concordance as descriptive; integrity of
+  the harvest record preserved; numeric audit strengthened (44 -> 46).
+```

@@ -62,7 +62,7 @@ package dependency; raw CSV/JSON parsed directly. Exit code 0, all PASS.
 | Subcortical K=50 | obs 26, z_A 9.06, z_B 2.08, p_B .031, 1.25× | all exact | PASS |
 | Subcortical K=25 (n.s.) | z_B 0.81 | 0.8056 | PASS |
 | Rank stability | 0.996 | 0.996 | PASS |
-| E06 configs / concordance | 9 / max |δ| ≤ 0.0026 | 9 / per RESOLUTION | PASS |
+| E06 configs / concordance | 9 / max like-for-like deviation 0.00262 (atlas_AAL116; no pre-registered numeric tolerance — descriptive) | 9 / 0.0026194 | VERIFIED |
 | Rewire acceptance (fixed) | 49.4% | 49.4% (76,941/155,610) | PASS |
 | Battery A integrity | 10,000 nulls, degree-exact 100%, 0 self-loops | all exact | PASS |
 | Fly δ | ≈0.0979 | 0.0979 (`e10b_final.json`) | PASS |

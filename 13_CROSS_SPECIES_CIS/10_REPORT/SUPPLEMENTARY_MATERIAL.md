@@ -69,8 +69,12 @@ configuration), q = 0.05; 43 survivors; censored nodes (all-null ≥ observed;
 ## S9. Robustness configurations
 9 conditions on frozen n=150 cohort: atlases {4S256, 4S156, Brainnetome246Ext,
 AAL116}, weights {sift_invnodevol, radius2_count}, costs {0.10, 0.20, 0.25}.
-All top-50 means within 0.0026 of primary (like-for-like primary row in
-RESOLUTION.md). Artifact: `06_ROBUSTNESS/`, `09_TABLES/table_08_robustness.csv`.
+All 9 conditions reproduce the primary architecture; max like-for-like
+top-50-mean deviation 0.00262 (atlas_AAL116; full precision 0.0026194,
+primary = 0.0012286 on the same n=150 cohort — RESOLUTION.md concordance).
+Note: no numeric tolerance was pre-registered for E06; the concordance is a
+descriptive comparison, not a pass/fail gate. Artifact: `06_ROBUSTNESS/`,
+`09_TABLES/table_08_robustness.csv`.
 
 ## S10. Seeds
 Subject samples: one RNG, seed 20260922, nested samples (A ⊂ B). Nulls:

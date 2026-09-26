@@ -16,9 +16,10 @@
 4. **Null integrity.** Exact per-node degree preservation verified per null:
    10,000/10,000; 0 self-loops; seeds 100+i; adversarial regression suite
    (hub-selfloop/pendant, dense, ring) passing.
-5. **Robustness.** 9 pre-declared configurations; all top-50 means within
-   0.0026 of primary; rank stability median Spearman 0.996 over 100
-   half-splits.
+5. **Robustness.** 9 pre-declared configurations; all reproduce the
+   primary architecture (max like-for-like top-50-mean deviation 0.00262,
+   atlas_AAL116; no pre-registered numeric tolerance — descriptive);
+   rank stability median Spearman 0.996 over 100 half-splits.
 6. **Traceability.** Every manuscript number maps to a frozen artifact file
    (audit §C and `FIGURE_PROVENANCE.md`); append-only research log; no
    silent corrections (the two documentation fixes of 2026-09-26 are flagged

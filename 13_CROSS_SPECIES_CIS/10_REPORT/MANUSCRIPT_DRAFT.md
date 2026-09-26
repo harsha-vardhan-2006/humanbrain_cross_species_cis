@@ -223,7 +223,9 @@ primary configuration [artifact: `06_ROBUSTNESS/`, table_08].
 6. **What would falsify the architectural claim.** If the layer-1
    concentration were an artifact of thresholded dense graphs, it should
    vanish in sparser regimes — it does not (E06: all 9 atlas/weight/cost
-   configurations within 0.0026 of the primary top-50 mean). If the
+   configurations reproduce the primary architecture; max like-for-like
+   top-50-mean deviation 0.00262, atlas_AAL116 — descriptive comparison;
+   no numeric tolerance was pre-registered for E06). If the
    residual were pure CIS noise floor, it should not be directionally
    stable within subjects across 10,000 half-split rank comparisons
    (median Spearman 0.996). The claim most vulnerable to future work is

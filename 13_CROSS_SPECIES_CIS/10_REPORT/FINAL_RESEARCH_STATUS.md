@@ -27,7 +27,9 @@ seeds. Full detail: `10_REPORT/ANALYSIS_FREEZE.md`.
 - **H2 SUPPORTED:** degree-independent residual in 778/801 subjects
   (sign p = 2.6e-197; Cliff's δ = 0.100 [0.078–0.129]); 43/456 nodes survive
   BH-FDR q<.05 (max Stouffer z = 23.30); ρ(CIS, degree) median 0.943.
-- Rank stability 0.996; all robustness configs within 0.0026 of primary.
+- Rank stability 0.996; E06: 9 configs reproduce the primary architecture
+  (max like-for-like top-50-mean deviation 0.00262, atlas_AAL116; no
+  numeric tolerance was pre-registered for E06 — descriptive comparison).
 
 ## 5. Negative findings
 - **H3 NOT SUPPORTED (R2b NEGATIVE):** residual is not robustly

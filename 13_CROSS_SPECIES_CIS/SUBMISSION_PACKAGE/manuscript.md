@@ -121,8 +121,10 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
 7. **System/enrichment (H3/R2b).** Pre-registered gate NEGATIVE: Vis obs 1
    (2%), z_B = −0.38; only Subcortical/Cerebellar nominal (obs 26, z_A 9.06,
    z_B 2.08, p .031, 1.25×), absent at K = 25 (z_B 0.81) — degree-anchored.
-8. **Robustness.** 9 configurations within 0.0026 of primary top-50 mean;
-   rank stability median Spearman 0.996.
+8. **Robustness.** 9 configurations reproduce the primary architecture:
+   max like-for-like top-50-mean deviation 0.00262 (atlas_AAL116;
+   descriptive comparison — no numeric tolerance was pre-registered for
+   E06); rank stability median Spearman 0.996.
 9. **Cross-species comparison (H4).** δ 0.100 (human) vs 0.0979 (fly);
    both degree-dominated; human visual share 2% vs fly 80% visual-centrifugal
    — architecture replicates; anatomy does not.

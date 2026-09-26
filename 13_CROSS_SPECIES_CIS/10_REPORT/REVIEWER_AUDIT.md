@@ -44,7 +44,9 @@ manuscript already flags the δ agreement as partly fortuitous.
    CP03/CP05); ~10³ node-count difference stated in all summaries.
 3. Tractography weights are reconstruction-dependent (SIFT counts, single
    pipeline). — **DISCLOSED**: mitigated by multi-weight/multi-cost/multi-atlas
-   robustness ladder (9 configs, all within 0.0026 of primary like-for-like).
+   robustness ladder (9 configs; max like-for-like top-50-mean deviation
+   0.00262, atlas_AAL116 — descriptive comparison, no pre-registered
+   numeric tolerance).
 4. Subcortical/cerebellar concentration could be a degree artifact. —
    **DISCLOSED AND TESTED**: control B absorbs degree; z_B = 2.08 nominal at
    K=50, absent at K=25 (z_B = 0.81); reported as degree-anchored

@@ -42,6 +42,15 @@ Generated: 2026-09-26 00:35 · rules verbatim from REPORT_SCAFFOLD.md §1 (no am
 weight_invnodevol         150    0.001187               -0.000042      0.48316               -0.00845                 0.9379               -0.0028
    weight_r2count         150    0.001254                0.000026      0.48526               -0.00635                 0.9489                0.0082
 
+## E06 CLARIFICATION (flagged 2026-09-26; no statistic changed)
+The atlas_AAL116 row carries the maximum like-for-like top-50-mean
+deviation: full precision 0.0026194 (mean 0.0038480 vs primary 0.0012286
+on the same n=150 cohort). The "within 0.0026" phrasing used elsewhere is a
+2-significant-figure rounding and is NOT a pre-registered tolerance: no
+numeric E06 threshold exists in PROTOCOL_FREEZE or STUDY_DESIGN. The E06
+concordance is a descriptive comparison, not a pass/fail gate. Stated
+correctly: max deviation 0.00262 (3 s.f.).
+
 ## VERDICT
 Layer-1 replicated (concentration exceeds degree-preserving nulls); layer-2 null evidence absent or not system-structured -> weaker bridge, honest report per the frozen matrix.
 
