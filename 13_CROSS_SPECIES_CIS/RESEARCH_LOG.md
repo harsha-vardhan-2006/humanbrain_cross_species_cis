@@ -788,3 +788,54 @@ Final novelty interpretation: unchanged from E19 — the integration of
 Verdict:   Repository converges on the required scientific position;
   publication-ready framing; 44/44 numeric audit PASS.
 ```
+
+## E21 — FINAL CORRECTION PASS (2026-09-26; documentation only)
+
+```
+Date:        2026-09-26
+Trigger:     External report that the live GitHub repository still showed an
+             acquisition-workspace README. Verified against the remote before
+             editing: ls-remote + GitHub web fetch show origin/main at
+             e31b3a1 with 10 commits (not 9) and the README already carrying
+             the E20 scientific overview. The report was based on a stale
+             view; no scientific content was missing on the remote.
+             Decision: honor the request's substantive goal — make the root
+             README unmistakably a scientific project README — with minimal,
+             documentation-only changes.
+Inspected:   git state (clean, main, synced), full README, NOVELTY_AUDIT
+             (full report + pointer), CLAIM_EVIDENCE_MATRIX (25 rows),
+             manuscripts (DRAFT/FINAL/submission copy), NOVELTY_MATRIX,
+             RESOLUTION, HYPOTHESIS_RESULT_MATRIX, research log E00-E20.
+             All E19/E20 framing work confirmed present; nothing duplicated.
+Changed:
+  (1) README.md restructured under the requested title "HumanBrain
+      Cross-Species CIS" with the requested sections: Scientific
+      Objective / Main Findings / Cross-Species Finding / Contribution and
+      Novelty / Scientific Boundaries / Data and Reproducibility. ALL prior
+      acquisition content (safety policy, layout, key reports, licenses,
+      reproducibility) retained verbatim below, explicitly marked as the
+      original workspace documentation. No statement strengthened; the
+      boundaries section states the rejected GABA hypothesis and the
+      negative R2b gate explicitly.
+  (2) No manuscript change was needed: the abstract already follows the
+      required METHOD/RESULT/CROSS-SCALE/INTERPRETATION structure with the
+      negative gate stated, and guardrails are in place (E19/E20).
+  (3) No novelty-audit or claim-matrix change was needed: both exist with
+      the required sections/classes (E19) and are linked from the README.
+Preserved:   All negative findings (fly GABA rejection p=0.109; human R2b
+             NEGATIVE; Wilcoxon median p 0.167; 1/101 p-floor). All headline
+             statistics unchanged (44/44 audit PASS this session). Raw data,
+             caches, checksums, tags, release archive: untouched. Historical
+             log entries: untouched (append-only).
+Numerical consistency: cross-document spot checks repeated this session
+  (801/900, 456, 0.943, 200/200, 778/801, 0.100, 43/456, 2%, 0.0979,
+  2.6x, 13/50, 139,255) — all consistent with frozen artifacts.
+Literature uncertainty (unchanged): Kudriavtsev 2026 full text still unread
+  (4 documented attempts); 2025-2026 preprint coverage inherently partial;
+  novelty wording remains "to our knowledge"-bounded.
+Files changed in E21: README.md (root; restructure + preserve),
+  RESEARCH_LOG.md (this entry).
+Verdict:   Repository now presents the scientific project first while
+  retaining complete provenance; framing, novelty, and negatives are
+  publication-defensible; 44/44 numeric audit PASS.
+```
