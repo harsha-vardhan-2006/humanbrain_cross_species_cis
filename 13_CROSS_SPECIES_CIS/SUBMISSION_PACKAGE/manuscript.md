@@ -1,7 +1,7 @@
 # MANUSCRIPT FINAL — v2.0 (submission structure; results identical to frozen v1.0)
 
 > **Provenance:** every number in this document was recomputed from frozen
-> artifacts on 2026-09-26 (`10_REPORT/verify_final_numbers.py`, 42/42 PASS).
+> artifacts on 2026-09-26 (`10_REPORT/verify_final_numbers.py`, 46/46 PASS).
 > This edition restructures presentation per the submission checklist; **no
 > scientific conclusion or value differs from MANUSCRIPT_DRAFT.md v1.0 / RESOLUTION.md.**
 > Interpretation guardrails are quoted verbatim from HYPOTHESIS_RESULT_MATRIX.md.
@@ -13,6 +13,28 @@
 **Control-impact architecture of the human structural connectome: degree
 dominance, a small near-universal residual, and a cross-scale architectural
 comparison with the fly connectome**
+
+**Author:** Harsha Vardhan Malipeddi (Independent Researcher)
+
+**Author contributions (CRediT, single-author study):** Conceptualization;
+Methodology; Software; Validation; Formal analysis; Investigation; Data
+curation; Writing — original draft; Writing — review & editing;
+Visualization; Supervision; Project administration. Funding acquisition:
+not applicable — no external funding was received or sought.
+
+**Conflict of interest:** The author declares no competing interests. The
+project used an AI coding agent (Codebuff) for computational assistance
+under author supervision — a methodological disclosure, not a competing
+interest (repository research logs).
+
+**Ethics:** Secondary analysis of publicly distributed, already-published
+data (AOMIC-ID1000, Zenodo 19796783, CC-BY-4.0; FAFB v783, CC BY-NC 4.0).
+No new human data were collected; per the author's determination of
+2026-09-26, no IRB approval or exemption is required for this secondary use
+(see `SUBMISSION_PACKAGE/ethics_statement_if_applicable.md`).
+
+**Correspondence:** contact details withheld from the public repository;
+provided in the journal submission system.
 
 ## Abstract
 
@@ -71,24 +93,25 @@ No new biological mechanism, no homology, and no system-specific claim is made.
   null expectations. H2: a degree-independent residual remains after
   degree/strength adjustment. H3: the residual is robustly system-specific.
   H4: comparable architecture appears across fly and human scales.
-  Pre-registered in PROTOCOL_FREEZE.md before any computation.
+  Pre-registered in PROTOCOL_FREEZE.md before any computation [refs
+  1, 3, 6, 8; dataset: 7].
 
 ## 2. Methods
 
 Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
 
-- **Dataset and QC.** AOMIC-ID1000 derivatives (Zenodo 19796783, CC-BY-4.0);
-  900 subjects × 7 atlases extracted and verified (25,200 matrices; 0 NaN/Inf/
-  asymmetry); QC cohort 801/900 (frozen CIS-blind; flags retained, never
-  deleted).
+- **Dataset and QC.** AOMIC-ID1000 derivatives (Zenodo 19796783, CC-BY-4.0)
+  [7]; 900 subjects × 7 atlases extracted and verified (25,200 matrices; 0
+  NaN/Inf/asymmetry); QC cohort 801/900 (frozen CIS-blind; flags retained,
+  never deleted).
 - **Primary configuration.** 4S456Parcels; `sift_radius2_count_connectivity`;
   15% proportional threshold (k = 15,561 edges).
 - **CIS.** Exact per-node CIS = (E(G) − E(G−i))/E(G); 456 exact leave-one-out
   recomputations per subject; reference implementation validated to 6.1e-16;
   fast estimator (null graphs only) to 4e-16 under a mandatory 1e-9 gate.
 - **Matching.** ±10% total degree, 1:1 greedy, nearest-50 fallback (flagged).
-- **Null batteries.** Maslov–Sneppen undirected rewiring preserving the exact
-  per-node degree sequence (verified per null, 10,000/10,000 exact, 0
+- **Null batteries.** Maslov–Sneppen undirected rewiring [6] preserving the
+  exact per-node degree sequence (verified per null, 10,000/10,000 exact, 0
   self-loops); seeds 100+i; subject samples nested, seed 20260922.
 - **Statistics.** Per-node empirical p (add-one) → Stouffer → BH-FDR (q=.05);
   battery B z + sign test; enrichment controls A/B (10,000 perms);
@@ -151,12 +174,12 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
    cerebellar signal is degree-anchored and K-ladder-fragile. **R2b was
    negative**; the present data do not establish that the mechanism
    selecting residual chokepoints is conserved (nor that it is not).
-7. **Relationship to previous literature.** Alstott/Crossley: classic
+7. **Relationship to previous literature.** Alstott/Crossley [1, 3]: classic
    removal analysis, group-average, no matched controls or nulls.
-   Kudriavtsev 2026: closest neighbour (lesions + nulls) but matched-mass
+   Kudriavtsev 2026 [5]: closest neighbour (lesions + nulls) but matched-mass
    nulls and ageing framing — PARTIAL OVERLAP (10_LITERATURE/). NCT
-   literature: different metric. Yueh-Hsin 2024: resection simulations,
-   no matching/nulls.
+   literature [2, 4]: different metric. Yueh-Hsin 2024 [11]: resection
+   simulations, no matching/nulls.
 8. **Biological interpretation.** None beyond architecture: no new mechanism
    is claimed; no homology is claimed; the subcortical localization is
    degree-anchored; the fly–human δ similarity is interesting but partly
@@ -181,12 +204,11 @@ Condensed; full frozen detail in ANALYSIS_FREEZE.md and supplementary.
 ## 5. Contribution and Novelty
 
 **A. Established methods.** Node-removal/efficiency analysis of structural
-connectomes (Alstott 2009; Crossley 2014; degree-ordered removal on the fly
-connectome, Lin 2024), hub/rich-club analysis (van den Heuvel & Sporns
-2011), degree-preserving null models (Maslov–Sneppen), network
-controllability (Gu 2015; Betzel 2016), and cross-species connectome
-comparison (Venkadesh 2025; larval–adult Drosophila null + attack analyses,
-Yadav 2025) are each established.
+connectomes [1, 3; degree-ordered removal on the fly connectome: this
+project's frozen predecessor], hub/rich-club analysis [8], degree-preserving
+null models [6], network controllability [2, 4], and cross-species connectome
+comparison [9; larval–adult Drosophila null + attack analyses: 10] are each
+established.
 
 **B. Methodological integration.** To our knowledge, no prior study has
 combined per-node removal-based network-impact analysis, population-scale
@@ -279,3 +301,21 @@ release v1.0.0 artifacts (read-only). All human-side code, manifests,
 validation reports, and append-only logs in
 `github.com/harsha-vardhan-2006/humanbrain_cross_species_cis`; every number
 traces to an artifact (`FINAL_REPRODUCIBILITY_AUDIT.md`).
+
+## References
+
+Inline citations use [n] keyed to this list; literature provenance and
+verdicts per study are frozen in `10_LITERATURE/NOVELTY_MATRIX.md` and
+`10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`.
+
+1. Alstott, J., Breakspear, M., Hagmann, P., Cammoun, L., & Sporns, O. (2009). Modeling the impact of lesions in the human brain. *PLoS Computational Biology*, 5(6), e1000408. doi:10.1371/journal.pcbi.1000408
+2. Betzel, R. F., Gu, S., Medaglia, J. D., Pasqualetti, F., & Bassett, D. S. (2016). Optimally controlling the human connectome: the role of network topology. *Scientific Reports*, 6, 30770. doi:10.1038/srep30770
+3. Crossley, N. A., Mechelli, A., Scott, J., Carletti, F., Fox, P. T., McGuire, P., & Bullmore, E. T. (2014). The hubs of the human connectome are generally implicated in the anatomy of brain disorders. *Brain*, 137(Pt 8), 2382–2395. doi:10.1093/brain/awu132
+4. Gu, S., Pasqualetti, F., Cieslak, M., Telesford, Q. K., Yu, A. B., Kahn, A. E., Medaglia, J. D., Vettel, J. M., Miller, M. B., Grafton, S. T., & Bassett, D. S. (2015). Controllability of structural brain networks. *Nature Communications*, 6, 8414. doi:10.1038/ncomms9414
+5. Kudriavtsev, N., Rosso, M., Fernández, G., et al. (2026). Efficient ageing: Simulated lesion of the structural connectome reveals optimised decline in the healthy ageing brain. *bioRxiv*, 2026.05.29.728718. doi:10.64898/2026.05.29.728718 (full text verified via proxy extraction 2026-09-26)
+6. Maslov, S., & Sneppen, K. (2002). Specificity and stability in topology of protein networks. *Science*, 296(5569), 910–913. doi:10.1126/science.1065103
+7. Snoek, L., van der Miesen, M. M., Beemsterboer, T., van der Leij, A., Eigenhuis, A., & Scholte, H. S. (2021). The Amsterdam Open MRI Collection, a set of multimodal MRI datasets for individual difference analyses. *Scientific Data*, 8, 85. doi:10.1038/s41597-021-00870-6
+8. van den Heuvel, M. P., & Sporns, O. (2011). Rich-club organization of the human connectome. *Journal of Neuroscience*, 31(44), 15775–15786. doi:10.1523/JNEUROSCI.3539-11.2011
+9. Venkadesh et al. (2025). Directed connectomes across species reveal conserved and divergent pathways of neural signaling. *bioRxiv*, 2025.09.07.674762. doi:10.1101/2025.09.07.674762
+10. Yadav, P., Shinde, P., & Singh, A. (2025). Brain rewiring during development: A comparative analysis of larval and adult Drosophila melanogaster connectomes. *Network Neuroscience*, 9(4), 1299–1322. doi:10.1162/netn.a.26
+11. Yueh-Hsin, L., Dadario, N. B., Tang, S. J., Crawford, L., Tanglay, O., et al. (2024). Discernible interindividual patterns of global efficiency decline during theoretical brain surgery. *Scientific Reports*, 14, 14573. doi:10.1038/s41598-024-64845-4

@@ -59,7 +59,7 @@ table in `10_LITERATURE/NOVELTY_MATRIX.md` and §6 below.
 
 ## 3. Human findings (actual, artifact-traced)
 
-All numbers trace to frozen artifacts; independently recomputed 42/42 PASS
+All numbers trace to frozen artifacts; independently recomputed 46/46 PASS
 (`verify_final_numbers.py`, `FINAL_REPRODUCIBILITY_AUDIT.md`):
 
 - 801 QC-pass subjects of 900 acquired; 456-node 4S456 atlas; 15% cost

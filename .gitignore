@@ -4,6 +4,7 @@
 
 /*
 !/.gitignore
+!/LICENSE
 !/README_ACQUISITION.md
 !/00_Metadata/
 !/99_Logs/

@@ -3,7 +3,9 @@
 All analysis code is publicly available at
 **github.com/harsha-vardhan-2006/humanbrain_cross_species_cis**
 (release tag v1.0.0; also archived as `cross_species_cis_v1.0.0.zip` with
-recorded SHA256).
+recorded SHA256). **License: MIT** (see `LICENSE` at the repository root;
+covers the repository's code and documentation — underlying third-party
+data remain under their own terms, see the Data Availability Statement).
 
 Key components (single-source-of-truth implementations, frozen):
 

@@ -5,7 +5,7 @@ DATA → PREPROCESSING → QC → CIS → NULLS → RESIDUAL → STATISTICS → 
 TABLES → MANUSCRIPT, with scripts, inputs, outputs, parameters, and seeds.
 Complements: `10_REPORT/ANALYSIS_FREEZE.md` (frozen parameters),
 `10_REPORT/SUPPLEMENTARY_MATERIAL.md` (S1–S14), `FINAL_REPRODUCIBILITY_AUDIT.md`
-(44/44 numeric checks).
+(46/46 numeric checks).
 
 ## 1. Environment (verified from `00_MANIFEST/ENVIRONMENT_MANIFEST.txt`)
 

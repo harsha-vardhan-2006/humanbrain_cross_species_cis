@@ -1,8 +1,10 @@
 # SUBMISSION PACKAGE — README (index and build instructions)
 
-Assembled 2026-09-26. All statements reference frozen artifacts; placeholders
-are marked **[PLACEHOLDER]** and must be completed by the author before
-submission (nothing is fabricated).
+Assembled 2026-09-26; human-author fields completed and PDF/DOCX rendered
+the same day. All statements reference frozen artifacts; nothing is
+fabricated. **Status: placeholders resolved (CRediT confirmed, COI, ethics,
+affiliation); rendering DONE; package is submission-ready pending the
+author's final read-through and the human release/signing decision.**
 
 ## Contents
 | File | Purpose | Status |
@@ -10,37 +12,56 @@ submission (nothing is fabricated).
 | `cover_letter.md` | venue-agnostic factual cover letter | READY (author review) |
 | `highlights.md` | 6 highlight bullets | READY |
 | `graphical_abstract_description.md` | designer brief for the graphical abstract | READY |
-| `author_contributions.md` | CRediT statement | PLACEHOLDERS (author) |
+| `author_contributions.md` | CRediT statement | **COMPLETED (author-confirmed 2026-09-26)** |
 | `data_availability.md` | data provenance + licenses | READY |
-| `code_availability.md` | code paths + environment | READY |
+| `code_availability.md` | code paths + environment + MIT license | READY (license added 2026-09-26) |
 | `reproducibility_statement.md` | audit summary + disclosed gaps | READY |
-| `conflict_of_interest.md` | COI declaration | PLACEHOLDER (author) |
-| `ethics_statement_if_applicable.md` | secondary-data use note | PLACEHOLDER (author) |
+| `conflict_of_interest.md` | COI declaration | **COMPLETED (no competing interests)** |
+| `ethics_statement_if_applicable.md` | secondary-data use note | **COMPLETED (secondary use of public data; no IRB required — author determination)** |
 | `novelty_statement.md` | bounded novelty claim | READY (Kudriavtsev full-text gate CLOSED 2026-09-26) |
 | `JOURNAL_OPTIONS.md` | venue scope/policy table (no ranking) | READY (verify APCs at submission) |
-| `manuscript.md` | copied final manuscript | READY (source for typesetting) |
+| `manuscript.md` | final manuscript (author block + references added 2026-09-26) | READY |
+| `rendered/` | PDF/DOCX/HTML renderings + print stylesheet | **RENDERED 2026-09-26** |
 
-## Building manuscript.pdf / .docx
-`pandoc` was not installed on the working machine, so rendering was NOT
-executed here (do not claim otherwise). On any machine with pandoc + LaTeX:
+## Renderings (2026-09-26)
+`rendered/manuscript.pdf` (5 pp), `rendered/manuscript.docx`,
+`rendered/supplementary_material.pdf|.docx` (3 pp),
+`rendered/figure_captions.pdf` (2 pp; captions for all 6 main + 3
+supplementary figures, resolving the items FIGURE_PROVENANCE deferred to
+typesetting). The typeset PDF/DOCX are rendered from the manuscript body
+(## Title onward); the full provenance header remains in `manuscript.md`
+and `10_REPORT/MANUSCRIPT_FINAL.md`. Toolchain: pandoc 3.11 → HTML (print
+stylesheet `rendered/style_header.html`) → headless Chrome print-to-PDF;
+DOCX direct via pandoc. Visual/content inspection passed: zero
+[PLACEHOLDER]/TBD tokens; title page, CRediT/COI/ethics, references (11
+entries), Unicode notation, and page flow verified programmatically from
+the PDF text layer.
 
+## Building from source (reproducible rendering)
 ```bash
-pandoc 10_REPORT/MANUSCRIPT_FINAL.md -o manuscript.docx
-pandoc 10_REPORT/MANUSCRIPT_FINAL.md -o manuscript.pdf \
-  --pdf-engine=xelatex -V geometry:margin=1in
+pandoc manuscript.md -f markdown -t html5 -s -c rendered/style_header.html \
+  --metadata pagetitle="Manuscript" -o rendered/manuscript.html
+# PDF via headless Chrome (or: pandoc --pdf-engine=xelatex on TeX machines)
+chrome --headless --print-to-pdf=rendered/manuscript.pdf \
+  --no-pdf-header-footer rendered/manuscript.html
+pandoc manuscript.md -f markdown -t docx -o rendered/manuscript.docx
 ```
-
-Supplementary: `10_REPORT/SUPPLEMENTARY_MATERIAL.md` renders the same way.
-Figures: `08_FIGURES/*.png|pdf` (provenance: `10_REPORT/FIGURE_PROVENANCE.md`).
-Figure 5 (anatomical distribution of the 43 FDR survivors) was rendered
-2026-09-26 from frozen artifacts by `08_FIGURES/make_fig05_anatomical.py`
-(`fig05_fdr_anatomical.png|pdf`); no statistics were recomputed.
+Supplementary renders the same way from `10_REPORT/SUPPLEMENTARY_MATERIAL.md`.
+Figures: `../08_FIGURES/*.png|pdf` (provenance:
+`../10_REPORT/FIGURE_PROVENANCE.md`; captions: `../08_FIGURES/FIGURE_CAPTIONS.md`).
+Figure 5 (`fig05_fdr_anatomical.*`) was rendered 2026-09-26 from frozen
+artifacts by `../08_FIGURES/make_fig05_anatomical.py`; no statistics were
+recomputed.
 
 ## Pre-submission checklist (human)
 1. ~~Kudriavtsev 2026 full-text read; co-sign the gate record.~~ CLOSED
    2026-09-26 (full text verified via proxy; optional co-signature only).
-2. Fill [PLACEHOLDER]s: contributions, COI, ethics/IRB note, affiliation.
-3. Render PDF/DOCX; attach figures per FIGURE_PROVENANCE (Fig. 5 already
-   rendered from frozen artifacts).
+2. ~~Fill [PLACEHOLDER]s: contributions, COI, ethics/IRB note, affiliation.~~
+   DONE 2026-09-26 (author-confirmed).
+3. ~~Render PDF/DOCX; attach figures per FIGURE_PROVENANCE.~~ DONE
+   2026-09-26 (+ captions PDF).
 4. Verify current APC/policies of the chosen venue (JOURNAL_OPTIONS notes).
-5. Post bioRxiv preprint (optional; after step 1).
+5. Post bioRxiv preprint (optional).
+6. ~~Add a code license.~~ DONE 2026-09-26 (MIT, `LICENSE` at repo root).
+7. Correspondence email/ORCID: withheld from this public repo by author
+   decision; enter in the journal submission system.

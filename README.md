@@ -3,6 +3,13 @@
 **Cross-scale control-impact study: human structural connectomes (AOMIC-ID1000)
 vs the Drosophila connectome (FAFB v783).**
 
+**Status: frozen scientific result, publication phase (2026-09-26).**
+Submission package complete (author fields filled, PDF/DOCX rendered,
+figure captions added, MIT license); code licensed MIT (`LICENSE`).
+Reviewer-requested analyses, if any, must be added as clearly labeled
+post-hoc/secondary analyses — never by modifying the pre-registered
+primary results.
+
 ## Scientific Objective
 
 Investigate removal-based structural network impact — the Control Impact

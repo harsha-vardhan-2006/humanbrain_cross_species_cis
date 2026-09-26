@@ -21,7 +21,7 @@ Exact per-node CIS (validated to machine precision); degree-matched controls
 inference; two-level system enrichment; 9-config robustness ladder; frozen
 seeds. Full detail: `10_REPORT/ANALYSIS_FREEZE.md`.
 
-## 4. Main findings (all artifact-traced; 42/42 audit checks PASS)
+## 4. Main findings (all artifact-traced; 46/46 audit checks PASS)
 - **H1 SUPPORTED:** top-50 CIS concentration exceeds degree-preserving nulls
   in 200/200 subjects (median z = 16.36; sign p = 1.24e-60).
 - **H2 SUPPORTED:** degree-independent residual in 778/801 subjects
@@ -73,7 +73,9 @@ provenance gap disclosed.
 **PASS.** Independent stdlib-only audit recomputed every documented number
 from frozen artifacts: 42/42 at freeze; extended to 44/44 on 2026-09-26
 (added max-population-mean-CIS checks; manuscript rounding corrected
-0.00463 → 0.00462 to match `e03_summary.json` = 0.0046246)
+0.00463 → 0.00462 to match `e03_summary.json` = 0.0046246); extended to
+46/46 on 2026-09-26 after the E06 threshold clarification (two full-precision
+E06 checks replace a never-triggering gate)
 (`10_REPORT/verify_final_numbers.py`, `FINAL_REPRODUCIBILITY_AUDIT.md`).
 Implementations cross-validated (4e-16 / 6.1e-16). No unexplained
 discrepancy exists anywhere in the tree.

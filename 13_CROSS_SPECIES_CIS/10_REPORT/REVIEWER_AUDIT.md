@@ -58,7 +58,7 @@ correctly framed as a limitation rather than claimed away.**
 ## REVIEWER C — Computational reproducibility
 
 **Major concerns**
-1. Can every reported number be regenerated? — **ADDRESSED**: 44/44 checks in
+1. Can every reported number be regenerated? — **ADDRESSED**: 46/46 checks in
    `verify_final_numbers.py` recompute every headline number from frozen
    artifacts; implementations cross-validated (6.1e-16 / 4e-16); pipeline
    mapped end-to-end in `REPRODUCIBILITY.md` with commands, seeds, runtimes.

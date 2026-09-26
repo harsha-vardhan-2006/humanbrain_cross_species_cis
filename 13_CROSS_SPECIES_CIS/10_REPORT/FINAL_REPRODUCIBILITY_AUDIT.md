@@ -3,7 +3,8 @@
 **Audit date:** 2026-09-26
 **Auditor:** Buffy (Codebuff agent) — independent numeric recomputation
 **Method:** every documented number recomputed from frozen artifacts with a
-stdlib-only script (`10_REPORT/verify_final_numbers.py`, 42 checks). No
+stdlib-only script (`10_REPORT/verify_final_numbers.py`, 46 checks as of
+2026-09-26; 42 at freeze). No
 package dependency; raw CSV/JSON parsed directly. Exit code 0, all PASS.
 
 ---
@@ -39,7 +40,7 @@ package dependency; raw CSV/JSON parsed directly. Exit code 0, all PASS.
 | Enrichment | controls A (label shuffle) + B (degree-matched pools), 10k perms | `e05_statistics.py` | PASS |
 | Enrichment p floor | p_A = 0.9999 = (10000−1+1)/10001 for zero-tail systems | e05_statistics.json | PASS (expected) |
 
-## C. RESULTS — PASS (42/42 numeric checks)
+## C. RESULTS — PASS (46/46 numeric checks)
 
 | Claim | Documented | Recomputed | Status |
 |---|---|---|---|

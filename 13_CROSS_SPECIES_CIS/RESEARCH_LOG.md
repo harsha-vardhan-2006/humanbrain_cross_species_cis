@@ -1081,3 +1081,72 @@ Verdict:   Documentation now states the exact authoritative E06 value and
   correctly characterizes the concordance as descriptive; integrity of
   the harvest record preserved; numeric audit strengthened (44 -> 46).
 ```
+
+## E26 — PUBLICATION-PHASE COMPLETION (2026-09-26, late; no scientific content changed)
+
+```
+Date:        2026-09-26
+Trigger:     Author-directed transition to the publication/submission phase.
+             The project is now a FROZEN SCIENTIFIC RESULT: any future
+             reviewer-requested analysis must be added as a clearly labeled
+             post-hoc/secondary analysis, never by modifying the
+             pre-registered primary results. No exploratory analysis was run.
+HUMAN-AUTHOR FIELDS (author-confirmed decisions, no fabrication):
+  - CRediT (author_contributions.md): all roles assigned to the sole author
+    (Harsha Vardhan Malipeddi); Funding acquisition n/a (no funding);
+    AI-assistance disclosure (Codebuff) retained as a methodological note.
+  - Conflict of interest: none to declare (confirmed 2026-09-26).
+  - Ethics: secondary analysis of public data (AOMIC-ID1000 CC-BY-4.0;
+    FAFB v783 CC BY-NC 4.0); author determination: no IRB approval or
+    exemption required; statement updated accordingly.
+  - Affiliation: Independent Researcher (manuscript title page).
+  - Correspondence email/ORCID: withheld from the public repo by author
+    decision; to be entered in the journal submission system.
+MANUSCRIPT EDITS (presentation only; zero scientific values changed):
+  - MANUSCRIPT_FINAL.md (+ SUBMISSION_PACKAGE/manuscript.md, kept an exact
+    copy): title page added (author, affiliation, CRediT, COI, ethics,
+    correspondence note); References section added with 11 verified
+    entries (Alstott 2009; Betzel 2016; Crossley 2014; Gu 2015;
+    Kudriavtsev 2026; Maslov & Sneppen 2002; Snoek 2021; van den Heuvel &
+    Sporns 2011; Venkadesh 2025; Yadav 2025; Yueh-Hsin 2024) with inline
+    [n] anchors in Intro/Methods/Discussion; stale audit counts
+    42/42 -> 46/46 in current-tense lines of ANALYSIS_FREEZE,
+    FINAL_REPRODUCIBILITY_AUDIT, FINAL_RESEARCH_STATUS, NOVELTY_AUDIT,
+    REVIEWER_AUDIT, REPRODUCIBILITY (historical log lines untouched).
+  - Bibliographic details verified against public records (web search)
+    before insertion; no reference fabricated.
+RENDERING (pandoc 3.11 installed via winget, per author approval):
+  - SUBMISSION_PACKAGE/rendered/: manuscript.pdf (5 pp), manuscript.docx,
+    supplementary_material.pdf (3 pp) + .docx, figure_captions.pdf (2 pp),
+    HTML sources + print stylesheet.
+  - PDF path: pandoc -> HTML -> headless Chrome print-to-PDF (no LaTeX on
+    machine); DOCX: pandoc direct. Typeset PDF/DOCX use the manuscript
+    body (## Title onward); full provenance header remains in the repo
+    markdown sources.
+VISUAL/CONTENT INSPECTION (programmatic, from the PDF text layer):
+  - manuscript.pdf: 9/9 checks PASS — clean title page (no build header),
+    title/author/affiliation/CRediT/COI/ethics on page 1, abstract,
+    references incl. entries 1-11, correct E06 descriptive wording,
+    zero [PLACEHOLDER]/TBD tokens, Unicode math (delta/rho/sigma) intact.
+  - supplementary_material.pdf: S1-S14 complete, placeholder-free.
+  - figure_captions.pdf: Figure 1-6 + S1-S3 captions, placeholder-free.
+SUBMISSION-PACKAGE AUDIT:
+  - 08_FIGURES/FIGURE_CAPTIONS.md added (all 9 figures; resolves the
+    FIGURE_PROVENANCE items deferred "to typesetting": N in Fig-2 caption,
+    1/101 p-floor in Fig-3 caption, 778/801 + delta median in Fig-4
+    caption). Frozen numbers only.
+  - LICENSE (MIT) added at repo root (author choice) with an explicit
+    scope note: third-party data keep their own terms (CC-BY-4.0 /
+    CC BY-NC 4.0); code_availability.md updated to cite it.
+  - SUBMISSION_PACKAGE/README.md: statuses updated to COMPLETED/RENDERED,
+    actual toolchain documented, checklist items 2/3/6/7 resolved.
+  - Root README.md: status line added (frozen result, publication phase,
+    post-hoc rule).
+VALIDATION: verify_final_numbers.py re-run: 46/46 PASS (unchanged).
+No scientific value, gate, or frozen artifact touched in this entry.
+Verdict:   Submission package is complete and submission-ready pending the
+  author's final read-through; remaining items are human decisions
+  (venue choice, APC/policy verification, optional preprint). The
+  v1.1.0 release tag was pre-approved by the author in the same session
+  and is created immediately after this commit.
+```

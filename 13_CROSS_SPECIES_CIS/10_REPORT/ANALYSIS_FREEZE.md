@@ -1,7 +1,8 @@
 # ANALYSIS FREEZE — Cross-Species CIS Study
 
 **Freeze date:** 2026-09-26
-**Precondition:** FINAL_REPRODUCIBILITY_AUDIT.md = PASS (42/42 numeric checks).
+**Precondition:** FINAL_REPRODUCIBILITY_AUDIT.md = PASS (42/42 numeric checks
+at freeze; 46/46 as of 2026-09-26 after the E06 threshold clarification).
 
 > **Primary scientific results are frozen. Any future analytical change must
 > be documented as a new analysis rather than silently replacing the frozen
