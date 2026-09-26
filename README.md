@@ -3,46 +3,33 @@
 **Cross-scale control-impact study: human structural connectomes (AOMIC-ID1000)
 vs the Drosophila connectome (FAFB v783).**
 
-**Status: frozen scientific result, publication phase (2026-09-26).**
-Submission package complete (author fields filled, PDF/DOCX rendered,
-figure captions added, MIT license); code licensed MIT (`LICENSE`).
-Reviewer-requested analyses, if any, must be added as clearly labeled
-post-hoc/secondary analyses — never by modifying the pre-registered
-primary results.
+**Status: frozen scientific result; publication-ready release v1.1.0
+(2026-09-26).** The analysis is complete and frozen; reviewer-requested
+analyses, if any, will be added only as clearly labeled post-hoc/secondary
+analyses — never by modifying the pre-registered primary results. Code is
+licensed MIT (`LICENSE`).
 
-## Scientific Objective
+## Research Question
 
-Investigate removal-based structural network impact — the Control Impact
-Score, CIS(i) = (E(G) − E(G−i))/E(G) — in population-scale human structural
-connectomes and in the Drosophila connectome; separate the
-connectivity-dependent component of that impact from any degree-independent
-residual; and compare the resulting architecture across scales.
+Can removal-based Control Impact Score (CIS) identify structurally
+influential nodes in human structural connectomes, and does the resulting
+architecture show a comparable pattern across biological scales?
 
-## Main Findings
+## Hypotheses
 
-- **Degree dominance.** CIS is strongly associated with degree
-  (median Spearman ρ = 0.943; 801 QC-pass subjects of 900 acquired;
-  456-node atlas).
-- **Concentration beyond nulls.** Top-50 CIS concentration exceeds
-  degree-preserving (Maslov–Sneppen) null expectations in 200/200 tested
-  subjects (median z = 16.36; sign p = 1.24 × 10⁻⁶⁰).
-- **Degree-independent residual.** A smaller residual component remains
-  detectable in 778/801 subjects (Cliff's δ = 0.100; sign p = 2.6 × 10⁻¹⁹⁷);
-  43/456 nodes survive BH-FDR q < .05.
-- **Not system-specific.** The pre-registered system-enrichment gate was
-  negative; visual systems hold only 2% of the human top-50; no robust
-  canonical-system-specific explanation was established.
+Pre-registered in
+`13_CROSS_SPECIES_CIS/00_MANIFEST/PROTOCOL_FREEZE.md` before any
+computation:
 
-## Cross-Species Finding
+- **H1.** Top-50 CIS concentration exceeds degree-preserving null
+  expectations in individual subjects.
+- **H2.** A degree-independent residual of control impact remains after
+  explicit degree/strength adjustment.
+- **H3.** The residual is robustly system-specific (canonical brain
+  systems).
+- **H4.** A comparable architecture appears at the fly connectome scale.
 
-**"Architecture replicates; anatomy does not."** A broadly similar
-two-component organization — a dominant connectivity-dependent component plus
-a smaller degree-independent residual — appears in both the human
-(δ = 0.100) and fly (δ = 0.0979, itself not null-surviving) analyses, across a
-roughly 10³-fold node-count difference, while the residual's anatomical
-identity diverges (human 2% visual vs fly 80% visual-centrifugal).
-
-## Contribution and Novelty
+## Scientific Contribution
 
 The individual components are established methods (node-removal efficiency
 analysis, cost thresholding, matched controls, configuration-model nulls,
@@ -51,43 +38,241 @@ framework** — per-node removal CIS + population-scale per-subject computation
 + explicit degree/strength-controlled residualization + degree-preserving
 null-model arbitration + FDR-controlled residual inference +
 robustness/rank-stability analysis + a pre-specified cross-species comparison
-with Drosophila — and the resulting cross-scale empirical comparison. Full
-audit: `13_CROSS_SPECIES_CIS/NOVELTY_AUDIT.md`;
-claim-by-claim evidence: `13_CROSS_SPECIES_CIS/CLAIM_EVIDENCE_MATRIX.md`.
+with Drosophila — and the resulting cross-scale empirical comparison.
+To our knowledge, no prior study has combined these analyses in a
+per-subject population-scale human structural-connectome framework with a
+cross-scale comparison. Full audit:
+`13_CROSS_SPECIES_CIS/10_REPORT/NOVELTY_AUDIT.md`; claim-by-claim evidence:
+`13_CROSS_SPECIES_CIS/CLAIM_EVIDENCE_MATRIX.md`.
 
-## Scientific Boundaries
+## Core Method
 
-- No anatomical homology is claimed (explicit no-homology rules,
-  CP03/CP05).
-- No conserved biological mechanism, no universal law, and no causal
-  mechanism is established.
-- The cross-scale similarity is an architectural observation and a
-  hypothesis-generating finding: it motivates, but does not prove, that
-  hierarchical organization of network impact may recur across
-  nervous-system scales.
-- Negative results are preserved: the fly study's original
-  GABA/inhibitory-specific hypothesis was **rejected** under degree-preserving
-  null testing, and the human residual yielded **no** robust
-  canonical-system-specific interpretation.
+### Control Impact Score
 
-## Data and Reproducibility
+For each subject's undirected graph G, global efficiency is
+E(G) = mean over node pairs of the inverse shortest-path length. The Control
+Impact Score of node i is
 
-Human data: AOMIC-ID1000 structural connectomes (Zenodo 19796783, CC-BY-4.0;
-900 subjects × 7 atlases, checksum-verified). Fly reference: frozen FAFB v783
-release (139,255 neurons; CC BY-NC 4.0). Every manuscript number traces to a
-frozen artifact; an independent stdlib-only audit recomputes all headline
-values (`13_CROSS_SPECIES_CIS/10_REPORT/verify_final_numbers.py`, 44/44 PASS).
-Full pipeline, manifests, and append-only research log:
-`13_CROSS_SPECIES_CIS/` (see also `13_CROSS_SPECIES_CIS/10_REPORT/
-FINAL_RESEARCH_STATUS.md` and `RESOLUTION.md`).
+    CIS(i) = (E(G) − E(G−i)) / E(G)
+
+computed **exactly** by removing node i and recomputing global efficiency on
+the remaining graph — for all 456 nodes in every subject (reference
+implementation validated to 6.1e-16; fast estimator used only for null
+graphs, gated at 1e-9). CIS is a unitless fraction of baseline efficiency
+lost: **higher CIS = a structurally more influential node**. Graphs are
+thresholded at 15% connection cost (k = 15,561 edges) on SIFT streamline
+counts (4S456 parcellation).
+
+### Degree/Strength Control
+
+Node importance is degree-confounded, so raw CIS comparisons are never
+interpreted directly. Each node is matched to controls within ±10% total
+degree (1:1 greedy; nearest-50 fallback, flagged), with strength association
+reported separately (ρ = 0.486). The **degree-independent residual** is the
+CIS advantage of each node over its degree-matched controls; it is analyzed
+per subject and across the population.
+
+### Degree-Preserving Nulls
+
+Maslov–Sneppen rewiring preserves each graph's **exact per-node degree
+sequence** (verified per null: 10,000/10,000 exact, 0 self-loops; seeds
+100+i). Two batteries arbitrate every headline claim: battery A (100
+subjects × 100 nulls, full-CIS) and battery B (200 subjects × 100 nulls,
+top-50 concentration). Subject samples are nested under one RNG (seed
+20260922).
+
+### Population Analysis
+
+801 QC-pass subjects of 900 acquired (frozen, CIS-blind flags — retained,
+never deleted). Per-node empirical p (add-one) → Stouffer combination →
+BH-FDR (q < .05, 456 tests); population sign tests; effect sizes as Cliff's
+δ; rank stability over 100 half-splits (median Spearman 0.996).
+
+### Cross-Species Analysis
+
+The human study is compared with the frozen fly (FAFB v783) study using
+**normalized comparators only** (effect size δ, enrichment z_B,
+concentration shares), per explicit discipline tags (DIRECT/NORMALIZED/
+QUALITATIVE). Human and fly nodes are not treated as homologous structures;
+the comparison operates at the level of network architecture and statistical
+organization. Absolute CIS values are never compared across species
+(different units, graphs, and designs).
+
+## Data
+
+### Human
+
+AOMIC-ID1000 structural connectomes — Zenodo record **19796783**
+(CC-BY-4.0), 900 subjects × 7 atlases; the 4S456 connectome derivative is
+used. Byte-exact local verification against the Zenodo API
+(`00_Metadata/AOMIC_VERIFICATION_REPORT.md`, `CHECKSUMS_AOMIC.sha256`).
+Raw zips are **not redistributed** in this repository.
+
+### Fly
+
+Frozen result artifacts of the fly study on FAFB v783 (139,255 neurons,
+FlyWire release, CC BY-NC 4.0) — read-only, release v1.0.0 of the companion
+project. No fly raw data are redistributed.
+
+## Results
+
+### Human Results
+
+- **Degree dominance.** CIS is strongly associated with degree (median
+  Spearman ρ = 0.943; 801 QC-pass subjects; 456-node atlas).
+- **Concentration beyond nulls (H1 supported).** Top-50 CIS concentration
+  exceeds degree-preserving null expectations in **200/200** tested subjects
+  (median z = 16.36; sign p = 1.24 × 10⁻⁶⁰; 100% of subjects at the 1/101
+  empirical-p floor — inference via z + sign test).
+- **Degree-independent residual (H2 supported).** Detectable in **778/801**
+  subjects (Cliff's δ = 0.100 [0.078–0.129]; sign p = 2.6 × 10⁻¹⁹⁷;
+  36,846 matched pairs); **43/456** nodes survive BH-FDR q < .05 (max
+  Stouffer z = 23.30).
+- **Not system-specific (H3 NOT supported).** The pre-registered
+  system-enrichment gate was **negative**: visual systems hold only 2% of
+  the top-50, and the single nominal signal (Subcortical/Cerebellar, z_B =
+  2.08, p = .031, 1.25×) is degree-anchored and absent at K = 25.
+- **Robustness (descriptive).** 9 atlas/weight/cost configurations reproduce
+  the primary architecture; max like-for-like top-50-mean deviation 0.00262
+  (atlas_AAL116; no numeric tolerance was pre-registered — see E06 note in
+  `13_CROSS_SPECIES_CIS/10_REPORT/RESOLUTION.md`).
+
+### Fly Results
+
+- Visual-centrifugal enrichment **2.63×** after degree matching
+  (z = 5.30, p ≈ 1 × 10⁻⁴); 13/50 top nodes beat matched peers.
+- **GABA-specific hypothesis REJECTED**: the raw matched-pair effect did not
+  survive degree-preserving nulls (p_delta = 0.109; p_median = 0.782;
+  z = 1.21).
+- Fly residual δ = **0.0979** did **not** survive its null test (p = 0.109)
+  — reported as such.
+
+### Cross-Species Results
+
+A qualitatively similar two-component organization appears at both scales
+(human δ = 0.100; fly δ = 0.0979) across a ~10³-fold node-count difference,
+while the residual's anatomical identity diverges: human 2% visual vs fly
+80% visual-centrifugal.
+
+## Key Interpretation
+
+**"Architecture replicates; anatomy does not."** A dominant
+connectivity-dependent component plus a smaller degree-independent residual
+recurs across scales; the anatomical identity of the residual does not.
+This is an architectural, hypothesis-generating observation.
+
+## What This Study Does NOT Claim
+
+- No anatomical homology (explicit no-homology rules CP03/CP05).
+- No functional equivalence.
+- No causal mechanism.
+- No universal law.
+- No one-to-one human/fly anatomical correspondence — human and fly nodes
+  are not treated as homologous structures; the comparison is at the level
+  of network architecture and statistical organization.
+
+## Reproducibility
+
+An independent stdlib-only audit recomputes every headline number from the
+frozen artifacts: `python 13_CROSS_SPECIES_CIS/10_REPORT/verify_final_numbers.py`
+→ **46/46 PASS** (2026-09-26). Full pipeline map with exact commands, seeds,
+parameters, and runtimes: `13_CROSS_SPECIES_CIS/REPRODUCIBILITY.md`; frozen
+parameters: `13_CROSS_SPECIES_CIS/10_REPORT/ANALYSIS_FREEZE.md`; append-only
+decision log: `13_CROSS_SPECIES_CIS/RESEARCH_LOG.md`. No unexplained
+discrepancy exists anywhere in the tree.
+
+## Data Provenance
+
+- AOMIC raw zips: SHA256-verified (10/10) —
+  `00_Metadata/CHECKSUMS_AOMIC.sha256`, `AOMIC_VERIFICATION_REPORT.md`.
+- Release archive `dist/cross_species_cis_v1.0.0.zip` with
+  `dist/SHA256SUMS_cross_species_cis.txt`.
+- Cross-acquisition provenance (BigBrain/FAFB/AOMIC):
+  `00_Metadata/ACQUISITION_REPORT.md`, `INTEGRITY_REPORT.md`,
+  `cross_species_manifest.*`, `NOT_ACQUIRED.md`, `dataset_catalog.md`.
+
+## Raw Data Protection
+
+RAW data are never modified, moved, or committed: the AOMIC raw zips under
+`12_HumanConnectome_AOMIC/zenodo_19796783_raw/` are READ-FOREVER; the fly
+dataset (G:\fruitfly) is READ-ONLY; no `.nii`, `.mat`, `.h5`, or raw `.zip`
+payloads are tracked in git (whitelist `.gitignore`). Conversions happen
+only under the derived trees; failed/suspicious files go to quarantine,
+never deleted.
+
+## Figures and Tables
+
+Figures: `13_CROSS_SPECIES_CIS/08_FIGURES/` (fig01–fig09, incl.
+`fig05_fdr_anatomical`) with publication captions in
+`08_FIGURES/FIGURE_CAPTIONS.md` and per-figure provenance in
+`10_REPORT/FIGURE_PROVENANCE.md` (all rendered from frozen artifacts; none
+manually edited). Tables: `13_CROSS_SPECIES_CIS/09_TABLES/`
+(table_01–table_10; table_09_cross_scale.csv lives in
+`07_CROSS_SCALE/`).
+
+## Manuscript
+
+`13_CROSS_SPECIES_CIS/10_REPORT/MANUSCRIPT_FINAL.md` (author block, CRediT,
+COI, ethics, references) — identical copy in
+`13_CROSS_SPECIES_CIS/SUBMISSION_PACKAGE/manuscript.md`, with rendered
+PDF/DOCX in `SUBMISSION_PACKAGE/rendered/` and the full submission package
+(cover letter, highlights, statements) in `SUBMISSION_PACKAGE/`.
+
+## Supplementary Material
+
+`13_CROSS_SPECIES_CIS/10_REPORT/SUPPLEMENTARY_MATERIAL.md` (S1–S14; rendered
+PDF/DOCX in `SUBMISSION_PACKAGE/rendered/`).
+
+## Limitations
+
+Undirected graphs only (directed variant impossible in these derivatives);
+single pipeline/acquisition site; residual is near the CIS noise floor
+(hence null arbitration); battery-B per-subject p-values sit at the 1/101
+null-resolution floor (inference via z + population sign test); the
+subcortical residual is not robust across the pre-registered K ladder; the
+original `ENVIRONMENT_MANIFEST` provenance gap is disclosed (versions
+reconstructed from logs); Kudriavtsev 2026 full text was verified via
+proxy extraction (direct access blocked). No homology, mechanism, or
+scale-invariance claims are made anywhere.
+
+## License
+
+Repository code and documentation: **MIT** (`LICENSE`). Third-party data
+keep their own terms: AOMIC-ID1000 CC-BY-4.0; FAFB v783 CC BY-NC 4.0;
+BigBrain 2015 CC BY-NC-SA 4.0 (text archived at
+`00_Metadata/BigBrain_License.txt`).
+
+## Citation
+
+If you use this work, cite the study and the underlying datasets:
+
+```bibtex
+@misc{malipeddi2026crossspeciescis,
+  author       = {Malipeddi, Harsha Vardhan},
+  title        = {Control-impact architecture of the human structural
+                  connectome: degree dominance, a small near-universal
+                  residual, and a cross-scale architectural comparison with
+                  the fly connectome},
+  year         = {2026},
+  howpublished = {github.com/harsha-vardhan-2006/humanbrain_cross_species_cis},
+  note         = {Release v1.1.0; frozen analysis; all numbers trace to
+                  archived artifacts}
+}
+```
+
+Datasets: Snoek et al. 2021, *Scientific Data* 8:85 (AOMIC-ID1000;
+doi:10.1038/s41597-021-00870-6, Zenodo 19796783) and the FlyWire FAFB v783
+release (CC BY-NC 4.0).
 
 ---
 
-## Workspace safety policy
+# Acquisition workspace (original documentation, retained)
 
 *(The sections below are the original acquisition-workspace documentation.
-They are retained unchanged: the study tree `13_CROSS_SPECIES_CIS/` depends on
-these datasets and protection rules.)*
+They are retained unchanged: the study tree `13_CROSS_SPECIES_CIS/` depends
+on these datasets and protection rules.)*
+
+## Workspace safety policy
 
 Safety policy (binding for all tooling in this workspace):
 - G: is strictly READ-ONLY. Nothing may be written, moved, or deleted there.
@@ -115,21 +300,8 @@ Safety policy (binding for all tooling in this workspace):
 - G:\humanbrain\full18       5 pre-existing full8 volumes (EXISTING_LOCAL; verified, credited)
 - G:\fruitfly                FAFB v783 fly dataset (READ-ONLY reference; CC BY-NC 4.0)
 
-## Key reports (D:\HumanBrain\00_Metadata)
-- ACQUISITION_REPORT.md      final acquisition report (PASS when all verified)
-- INTEGRITY_REPORT.md        integrity/comparability summary
-- cross_species_manifest.*   FAFB <-> BigBrain comparability map (mandatory tags)
-- NOT_ACQUIRED.md            access-blocked + justified skips (no guessing)
-- dataset_catalog.md         what lives where
-- CHECKSUMS_D.sha256 / CHECKSUMS_F.sha256 / CHECKSUMS_G_reference.sha256
-- CHECKSUMS_AOMIC.sha256 + AOMIC_VERIFICATION_REPORT.md  (12_HumanConnectome_AOMIC batch)
+## Acquisition tooling
 
-## License
-- BigBrain 2015: CC BY-NC-SA 4.0 (research-only; attribution + share-alike; no commercial use).
-  Official text archived: 00_Metadata\BigBrain_License.txt (18,985 B, size-verified).
-- FAFB v783: CC BY-NC 4.0 (see G:\fruitfly LICENSE_NOTES.md).
-
-## Reproducibility
-All acquisition tooling is under D:\HumanBrain\99_Logs (downloaders, probes, verifiers,
-report generators). Re-running any script is safe: downloads resume, verification re-runs,
-reports regenerate.
+All acquisition tooling is under D:\HumanBrain\99_Logs (downloaders, probes,
+verifiers, report generators). Re-running any script is safe: downloads
+resume, verification re-runs, reports regenerate.

@@ -59,7 +59,7 @@ framework with a pre-registered cross-scale comparison."* —
 
 Reproduction: `REPRODUCIBILITY.md` maps the full pipeline (exact commands,
 seeds, environment, runtimes); `10_REPORT/verify_final_numbers.py`
-re-audits every headline number from frozen artifacts (44/44 PASS);
+re-audits every headline number from frozen artifacts (46/46 PASS);
 `10_REPORT/REVIEWER_AUDIT.md` records the final simulated-reviewer QC.
 
 ## Status (2026-09-26, post-freeze audit)

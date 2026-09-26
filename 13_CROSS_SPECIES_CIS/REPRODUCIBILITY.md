@@ -92,8 +92,9 @@ python 10_REPORT/verify_final_numbers.py
 - The frozen artifacts in this repository ARE the outputs of the pipeline
   above; no output is hand-edited (documented exceptions: two 2026-09-26
   documentation corrections, flagged inline and logged in RESEARCH_LOG).
-- `verify_final_numbers.py` (44 checks) recomputes every headline number from
-  the frozen artifacts: **44/44 PASS** (2026-09-26).
+- `verify_final_numbers.py` (46 checks) recomputes every headline number from
+  the frozen artifacts: **46/46 PASS** (2026-09-26; extended from 44 after
+  the E06 threshold clarification, see RESEARCH_LOG E25).
 - Fly-side artifacts live in the separate frozen `fruitfly` repository
   (release v1.0.0); the human tree reads only their result JSON/CSV files.
 - The release archive `dist/cross_species_cis_v1.0.0.zip` excludes

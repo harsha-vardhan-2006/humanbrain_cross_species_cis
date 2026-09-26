@@ -88,20 +88,26 @@ recorded). Fruitfly repo: history rewritten solely for author identity
 (provenance note appended; old→new SHA map recorded; tip 9a6ac1a).
 
 ## 11. Publication readiness
-READY at package level. `SUBMISSION_PACKAGE/` contains cover letter,
-highlights, graphical-abstract description, contributions, data/code
-availability, reproducibility, COI, ethics note, novelty statement, and
-journal options. Missing before upload: author-completed placeholders
-(contributions/COI/affiliation), PDF/DOCX typesetting (pandoc/LaTeX not
-installed on the working machine — commands provided in
-`SUBMISSION_PACKAGE/README.md`), optional co-signature of the (now
-closed) Kudriavtsev full-text gate record.
+READY. `SUBMISSION_PACKAGE/` contains cover letter, highlights,
+graphical-abstract description, contributions (CRediT, author-confirmed),
+data/code availability, reproducibility, COI (none to declare), ethics note
+(secondary use of public data; no IRB required — author determination),
+novelty statement, and journal options. Completed 2026-09-26: author
+placeholders (contributions/COI/ethics/affiliation — correspondence
+withheld from the public repo by author decision); PDF/DOCX typesetting
+(pandoc 3.11 + headless Chrome — `SUBMISSION_PACKAGE/rendered/`); figure
+captions (`08_FIGURES/FIGURE_CAPTIONS.md`). Remaining: venue choice/APC
+verification and submission itself (human actions). Optional: co-signature
+of the (now closed) Kudriavtsev full-text gate record.
 
 ## 12. Remaining tasks (all human actions)
-1. Read Kudriavtsev 2026 full text from an unblocked network; co-sign
-   `10_LITERATURE/KUDRIAVTSEV_2026_FULLTEXT_REVIEW.md`.
-2. Complete the [PLACEHOLDER] fields in the submission package.
-3. Render manuscript to PDF/DOCX. ~~Finalize Figure 5~~ — DONE 2026-09-26
+1. ~~Read Kudriavtsev 2026 full text; co-sign the gate record.~~ CLOSED
+   2026-09-26 (full text verified via proxy; optional co-signature only).
+2. ~~Complete the [PLACEHOLDER] fields in the submission package.~~ DONE
+   2026-09-26 (CRediT, COI, ethics, affiliation — author-confirmed;
+   correspondence withheld from the public repo by author decision).
+3. ~~Render manuscript to PDF/DOCX.~~ DONE 2026-09-26
+   (SUBMISSION_PACKAGE/rendered/). ~~Finalize Figure 5~~ — DONE 2026-09-26
    (rendered from frozen table_07 by `08_FIGURES/make_fig05_anatomical.py`).
 4. Choose venue (see `SUBMISSION_PACKAGE/JOURNAL_OPTIONS.md`); adapt cover
    letter; submit.

@@ -1150,3 +1150,55 @@ Verdict:   Submission package is complete and submission-ready pending the
   v1.1.0 release tag was pre-approved by the author in the same session
   and is created immediately after this commit.
 ```
+
+## E27 — FINAL REPOSITORY & PUBLICATION-READINESS AUDIT (2026-09-26, late; no scientific content changed)
+
+```
+Date:        2026-09-26
+Trigger:     Author-directed final 25-phase audit (git state, presentation,
+             README, E06, negatives, provenance, release).
+GIT STATE:   Case A — synchronized. HEAD = origin/main = dd5389b
+             (16 commits); annotated tag v1.1.0 on dd5389b, present
+             locally AND on remote (ls-remote verified); no divergence
+             (HEAD...origin/main empty); worktree clean at audit start.
+PHASE 14:    verify_final_numbers.py: 46/46 PASS (run twice during audit).
+README:      Root README rewritten as a research-focused document
+             (research question, hypotheses, contribution, core method
+             with full CIS math, data, results incl. fly numbers,
+             interpretation, NOT-claimed list, reproducibility,
+             provenance, raw-data protection, figures/tables, manuscript,
+             supplementary, limitations, MIT license, citation) — all
+             acquisition/provenance documentation retained verbatim in a
+             clearly labeled lower section. Stale "44/44" fixed.
+STALE DOCS:  13_CROSS_SPECIES_CIS/README.md and REPRODUCIBILITY.md 44/44
+             -> 46/46 (with E25 provenance note); FINAL_RESEARCH_STATUS
+             §11 rewritten (publication readiness now reflects completed
+             author fields + renderings) and §12 checklist items
+             1-3 marked CLOSED/DONE. v1.0.0 references audited: all are
+             correct historical release mentions, none stale.
+E06:         No false "<=0.0026 pre-registered" claim anywhere; the only
+             remaining "within 0.0026" is the quoted phrase inside the
+             sanctioned RESOLUTION clarification block. Exact value
+             0.0026194 (atlas_AAL116) verified; DESCRIPTIVE-PASS framing
+             intact (descriptive comparison, no pre-registered tolerance).
+NEGATIVES:   GABA rejection, fly delta not null-surviving, R2b NEGATIVE,
+             1/101 p-floor, K-ladder fragility all visible in README,
+             manuscript, supplementary, captions.
+RAW DATA:    git ls-files scan: zero tracked .nii/.mat/.h5/.hdf5/.zip/.tar
+             payloads (6,885 tracked files; whitelist .gitignore intact).
+NUMBERS:     Cross-document agreement sweep for 13 key statistics
+             (200/200, 16.36, 1.24e-60, 0.943, 778/801, delta 0.100,
+             43/456, 23.30, 2.63x, 5.30, 0.0979, 0.109, 0.00262): no
+             conflicting versions found across README, manuscript,
+             supplementary, captions.
+OVERCLAIMS:  "first ever"/"breakthrough"/"proves" absent; every
+             homology/causal/universal mention is a boundary statement
+             (what is NOT claimed). Bounded novelty wording intact.
+RELEASE:     GitHub Releases API check: NO release exists yet (creation
+             requires authenticated credentials; tag v1.1.0 IS pushed).
+No scientific value, gate, artifact, or frozen document changed in this
+entry; documentation-only changes above.
+Verdict:   Repository is publication-ready and synchronized; the only
+  open item is the human creation of the v1.1.0 GitHub Release (or
+  providing credentials for it), plus venue selection/submission.
+```
